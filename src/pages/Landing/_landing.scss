@@ -1,0 +1,235 @@
+.landing {
+  min-height: 100vh;
+  margin: 0 auto;
+
+  .search-cont {
+    background-color: $color-primary-2;
+    padding: 1rem 10rem;
+    margin-bottom: 5rem;
+    h1 {
+      margin-bottom: 2rem;
+      color: $color-light;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    .search-hotels {
+      margin-bottom: 2rem;
+    }
+
+    .prev {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      color: $color-light;
+      h3 {
+        margin-right: 2rem;
+      }
+
+      .tab {
+        padding: 0.75rem 1.5rem;
+        border: 2px solid $color-light;
+        border-radius: 20px;
+        user-select: none;
+        cursor: pointer;
+        transition: $transition-1;
+
+        &:hover {
+          background-color: $color-light;
+          color: $color-dark;
+        }
+
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+
+  .section {
+    position: relative;
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+      padding: 0 5rem;
+
+      .sec-title {
+        font-size: 3rem;
+        margin-right: 5rem;
+      }
+
+      .see-all {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+        color: $color-primary-2;
+        p {
+          margin-right: 1rem;
+          font-size: 1.5rem;
+        }
+        svg {
+          font-size: 1.5rem;
+          transition: $transition-1;
+        }
+
+        &:hover {
+          svg {
+            transform: translateX(1rem);
+          }
+        }
+      }
+    }
+
+    .flex-relative {
+      .btn-left,
+      .btn-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5rem;
+        height: 5rem;
+        background-color: rgba($color-dark, 0.5);
+        border-radius: 50%;
+        @include flexCenter;
+        z-index: 1;
+        cursor: pointer;
+        transition: $transition-1;
+
+        &:hover {
+          background-color: rgba($color-dark, 0.9);
+        }
+
+        svg {
+          color: $color-light;
+          font-size: 3rem;
+        }
+      }
+
+      .btn-left {
+        left: 3rem;
+      }
+      .btn-right {
+        right: 3rem;
+      }
+
+      .flex {
+        //   display: grid;
+        //   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        //   grid-gap: 3rem;
+        //   place-items: center;
+        display: flex;
+        overflow-x: auto;
+        @include hideScrollbar;
+        scroll-behavior: smooth;
+        padding-bottom: 5rem;
+
+        &:active {
+          cursor: grab;
+        }
+
+        .card-primary,
+        .card-secondary {
+          height: inherit;
+          flex-shrink: 0;
+          &:first-child {
+            margin-left: 5rem;
+          }
+          margin-right: 5rem;
+        }
+      }
+    }
+
+    .flex-relative.flex-relative-cardsec {
+      .btn-left,
+      .btn-right {
+        width: 3.5rem;
+        height: 3.5rem;
+        transform: translateY(-200%);
+      }
+    }
+  }
+
+  .newsletter {
+    margin: 0 5rem;
+    padding: 3rem;
+    background-color: rgba($color-grey-2, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+
+    .left {
+      h1 {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .input-primary {
+        margin-right: 3rem;
+        width: 40rem;
+      }
+
+      .button-primary-comp {
+        height: 5rem;
+      }
+    }
+  }
+}
+
+@include respond(tab-port) {
+  .landing {
+    .search-cont {
+      padding: 3rem 5rem;
+      .prev {
+        h3 {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+        .tab {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .section {
+      .flex-relative {
+        .btn-left,
+        .btn-right {
+          transform: translateY(-20%);
+        }
+      }
+      .flex-relative.flex-relative-cardsec {
+        .btn-left,
+        .btn-right {
+          transform: translateY(-380%);
+        }
+      }
+    }
+
+    .newsletter {
+      flex-direction: column;
+      .left {
+        margin-bottom: 2rem;
+      }
+
+      .right {
+        width: 100%;
+        flex-direction: column;
+        .input-primary {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}

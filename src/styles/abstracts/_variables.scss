@@ -1,0 +1,52 @@
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700;900&family=Open+Sans:wght@100;200;300;400;700;900&display=swap");
+
+$font-primary: "Open Sans", sans-serif;
+$font-secondary: "Montserrat", sans-serif;
+
+// colors
+
+// hash values
+
+$color-light: #fafaff;
+$color-dark: #212121;
+$color-background-1: #fff;
+$color-background-2: #000000;
+$color-primary-1: #abc5e6;
+$color-primary-2: #474394;
+$color-primary-3: #24225a;
+$color-secondary-1: #ccfbf1;
+$color-secondary-2: #0d9488;
+$color-secondary-3: #17837a;
+$color-tertiary-1: #eee3cb;
+$color-tertiary-2: #d7c0ae;
+$color-tertiary-3: #967e76;
+$color-success-1: #86efac;
+$color-success-2: #16a34a;
+$color-danger-1: #fda4af;
+$color-danger-2: #e11d48;
+$color-warning-1: #fef9c3;
+$color-warning-2: #eab308;
+$color-info-1: #a5f3fc;
+$color-info-2: #0891b2;
+$color-grey-1: #f1f5f9;
+$color-grey-2: #e2e8f0;
+$color-grey-3: #cbd5e1;
+$color-grey-4: #94a3b8;
+$color-grey-5: #64748b;
+$color-grey-6: #475569;
+
+// others
+$transition-1: all 0.3s;
+$transition-2: all 0.6s;
+$transition-3: all 1s;
+$transition-4: all 1.5s;
+$transition-5: all 2s;
+$transition-3: all 5s;
+
+$shadow-1: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+$shadow-2: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+$shadow-3: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+$shadow-4: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+$shadow-5: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+$shadow-6: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;

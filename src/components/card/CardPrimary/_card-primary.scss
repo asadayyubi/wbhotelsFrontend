@@ -1,0 +1,81 @@
+.card-primary {
+  width: 30rem;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba($color-grey-3, 0.5);
+  cursor: pointer;
+  transition: $transition-1;
+
+  .img {
+    width: 30rem;
+    height: 20rem;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: 2rem;
+      left: 0;
+      padding: 0.5rem 1rem;
+      background-color: $color-danger-2;
+      color: $color-light;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .rating {
+      position: absolute;
+      left: 2rem;
+      bottom: 0;
+      transform: translateY(50%);
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background-color: $color-success-2;
+      color: $color-light;
+      border-radius: 5px;
+
+      p {
+        margin-right: 0.5rem;
+      }
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .desc {
+    padding: 2rem;
+
+    .name {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    .place {
+      margin-bottom: 1rem;
+      color: $color-grey-5;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+
+      h3 {
+        margin-right: 2rem;
+        font-size: 2rem;
+      }
+
+      p {
+        color: $color-primary-2;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: $shadow-6;
+  }
+}

@@ -1,0 +1,28 @@
+.input-checkbox {
+  .chb {
+    visibility: hidden;
+  }
+
+  .chb + label {
+    position: relative;
+    padding-left: 5px;
+  }
+
+  .chb-1 + label::before {
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+    background-color: #16a085;
+    border-radius: 3px;
+    content: "";
+
+    top: 4px;
+    left: -20px;
+    padding-bottom: 5px;
+
+    font-size: 11px;
+    text-align: center;
+    font-weight: bolder;
+  }
+}

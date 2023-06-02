@@ -1,0 +1,18 @@
+.input-primary {
+  height: 5rem;
+  border: 2px solid rgba($color-secondary-2, 0.5);
+  border-radius: 5px;
+  width: 100%;
+  transition: $transition-1;
+  input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0 1rem;
+  }
+}
+.input-primary.focused {
+  border: 2px solid $color-secondary-3;
+}

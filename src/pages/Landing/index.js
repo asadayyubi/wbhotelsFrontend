@@ -1,0 +1,88 @@
+import React, {useRef, useContext, useEffect } from "react";
+import SearchHotels from "../../components/SearchHotels";
+import Navbar from "../../layout/Navbar";
+import ScrollContainer from "react-indiana-drag-scroll";
+import CardSecondary from "../../components/card/CardSecondary";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ButtonPrimary from "../../components/button/ButtonPrimary";
+import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
+import InputPrimary from "../../components/input/InputPrimary";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { useSelector } from "react-redux";
+import Section from "./Section";
+import { LoginContext } from "../../Contexts/LoginContext";
+import axios from 'axios';
+
+const Landing = () => {
+  const {setUserProfileDetails, userProfileDetails} = useContext(LoginContext);
+  const sec2Ref = useRef();
+  useEffect(() => {
+    if(userProfileDetails?.id) {
+      axios.post('https://api.ratebotai.com:8443/get_customer_info_data', {user_id: userProfileDetails.id}).then((response) => {
+        console.log("landing page, user Profile:", response.data);
+        setUserProfileDetails(response.data.data);
+      })
+    }
+}, []);
+  const { hotels } = useSelector((state) => state.hotels);
+  console.log("landing page hotels", hotels);
+
+  function scrollSec(direction, ref) {
+    const scrollValue = 500;
+    if (direction === "l") {
+      ref.current.scrollLeft -= scrollValue;
+    }
+    if (direction === "r") {
+      ref.current.scrollLeft += scrollValue;
+    }
+  }
+
+  return (
+    <div className="landing">
+      <Navbar />
+      <div className="search-cont">
+        <h1>Over 45,000 Rooms Across 200+ Locations</h1>
+        <SearchHotels />
+      </div>
+      <Section title="Handpicked for you" data={hotels.handpicked} />
+      <Section title="Favourites" data={hotels.favourite} />
+
+      {/* <div className="section mb-5">
+        <div className="header">
+          <h1 className="sec-title">Explore collections</h1>
+          <div className="see-all">
+            <p>SEE ALL</p>
+            <ArrowForwardIosIcon />
+          </div>
+        </div>
+        <div className="flex-relative flex-relative-cardsec">
+          <div className="btn-left" onClick={() => scrollSec("l", sec2Ref)}>
+            <ChevronLeftIcon />
+          </div>
+          <ScrollContainer className="flex" innerRef={sec2Ref}>
+            {hotels?.exploreCollections?.map((item) => (
+              <CardSecondary key={item.city} data={item} />
+            ))}
+          </ScrollContainer>
+          <div className="btn-right" onClick={() => scrollSec("r", sec2Ref)}>
+            <ChevronRightIcon />
+          </div>
+        </div>
+
+        <div className="newsletter">
+          <div className="left">
+            <h1>Get access to exclusive deals</h1>
+            <p>Only the best deals reach your inbox</p>
+          </div>
+          <div className="right">
+            <InputPrimary />
+            <ButtonPrimary text="Notify me" icon={<NotificationsActiveIcon />} />
+          </div>
+        </div>
+      </div> */}
+    </div>
+  );
+};
+
+export default Landing;

@@ -1,0 +1,35 @@
+.card-secondary {
+  width: 30rem;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba($color-grey-3, 0.5);
+  cursor: pointer;
+  transition: $transition-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+
+  .left {
+    h3 {
+      margin-bottom: 1rem;
+    }
+    p {
+      color: $color-grey-5;
+
+      &:first-child {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .right {
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+
+  &:hover {
+    box-shadow: $shadow-6;
+  }
+}

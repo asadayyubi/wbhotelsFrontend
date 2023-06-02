@@ -1,0 +1,250 @@
+.card-book {
+  background-color: rgba($color-grey-1, 0.2);
+  border-radius: 5px;
+  box-shadow: $shadow-2;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: $color-danger-2;
+    border-radius: 5px 5px 0 0;
+
+    .offer {
+      display: flex;
+      align-items: center;
+      color: $color-light;
+      svg {
+        font-size: 1.5rem;
+        margin-right: 0.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      background-color: $color-grey-1;
+      border-radius: 5px;
+      user-select: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    h1 {
+      margin-right: 1rem;
+
+      &:nth-child(2) {
+        color: $color-grey-5;
+        font-size: 2rem;
+        text-decoration: line-through;
+      }
+    }
+    h3 {
+      color: $color-success-2;
+    }
+  }
+  .taxes {
+    color: $color-grey-5;
+    padding: 0 2rem 2rem;
+  }
+
+  .filter {
+    display: flex;
+    height: 4rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba($color-grey-5, 0.2);
+    .date {
+      flex: 1;
+      padding: 0 2rem;
+      @include flexCenter;
+      border-right: 1px solid rgba($color-grey-5, 0.2);
+      position: relative;
+      user-select: none;
+
+      .date-btn {
+        width: 100%;
+        height: 100%;
+        @include flexCenter;
+        cursor: pointer;
+      }
+      .bg-tr {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+      }
+      .calendar-range {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 998;
+        box-shadow: $shadow-5;
+      }
+    }
+    .rooms {
+      flex: 1;
+      @include flexCenter;
+      user-select: none;
+      position: relative;
+
+      .rooms-btn {
+        width: 100%;
+        height: 100%;
+        @include flexCenter;
+        cursor: pointer;
+      }
+
+      .bg-tr {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+      }
+
+      .rooms-card {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: -50%;
+        padding: 2rem;
+        background-color: $color-light;
+        border-radius: 0 0 5px 5px;
+        box-shadow: $shadow-5;
+        cursor: default;
+        z-index: 998;
+        min-width: 25rem;
+
+        .header-rooms {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2rem;
+          // padding: 0 2rem;
+        }
+        .details-room {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 2rem;
+          .actions-room {
+            display: flex;
+            align-items: center;
+            .btn-room {
+              width: 3rem;
+              height: 3rem;
+              border-radius: 5px;
+              background-color: rgba($color-secondary-2, 1);
+              @include flexCenter;
+              font-size: 1, 5rem;
+              cursor: pointer;
+              user-select: none;
+              color: $color-light;
+              transition: $transition-1;
+
+              &:hover {
+                background-color: rgba($color-secondary-3, 1);
+              }
+            }
+            .no {
+              margin: 0 1rem;
+              font-size: 1.5rem;
+            }
+          }
+        }
+
+        .room-actions {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .btn-room-actions {
+            height: 3rem;
+            border-radius: 5px;
+            @include flexCenter;
+            background-color: rgba($color-secondary-2, 1);
+            padding: 0 1.5rem;
+            color: $color-light;
+            cursor: pointer;
+            user-select: none;
+            transition: $transition-1;
+
+            &:hover {
+              background-color: rgba($color-secondary-3, 1);
+            }
+            &:first-child {
+              margin-right: 1rem;
+            }
+            &:last-child {
+              margin-left: 1rem;
+            }
+          }
+          .btn-room-actions.btn-disabled {
+            background-color: rgba($color-secondary-2, 0.5);
+            border-color: rgba($color-secondary-2, 0.5);
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+  }
+
+  .room-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    background-color: rgba($color-grey-3, 0.4);
+    border-radius: 5px;
+    transition: $transition-1;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba($color-grey-3, 0.8);
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 1rem;
+      }
+    }
+    svg {
+      font-size: 1.5rem;
+    }
+  }
+  .coupon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+
+    .details {
+      display: flex;
+      align-items: center;
+      svg {
+        font-size: 1.5rem;
+        margin-right: 1rem;
+      }
+      p {
+        color: $color-grey-6;
+      }
+    }
+    .btn {
+      font-weight: bold;
+      color: $color-secondary-2;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: $transition-1;
+      &:hover {
+        color: $color-secondary-3;
+      }
+    }
+  }
+}

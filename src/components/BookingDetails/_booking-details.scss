@@ -1,0 +1,199 @@
+$small: 750px;
+
+.column-flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-flex>div {
+    flex: 1 1 auto;
+}
+
+.section {
+    margin-top: 1rem;
+}
+
+
+.book-details-container {
+    margin: 1rem 2rem;
+}
+
+.shadow {
+    box-shadow: 2px 4px 8px 0 rgb(0 0 0 / 10%);
+    border: solid 1px #d6d6d6;
+}
+
+.header {
+    margin-top: 1rem;
+
+    .text {
+        font-size: 28px;
+        font-weight: 800;
+        line-height: 1.71;
+    }
+
+    .confirm {
+        color: #1ab64f;
+    }
+
+    .cancelled {
+        color: #ee2e24
+    }
+
+    .conform-sub-text {
+        font-size: 16px;
+        line-height: 1.56;
+        color: #222;
+        margin: 0px;
+        font-weight: 600;
+    }
+
+    .print-button {
+        margin-top: 34px;
+        width: 150px;
+    }
+
+    .left,
+    .right {
+        margin: 1rem 1rem;
+    }
+
+    .left {
+        flex: 1 1 70%;
+    }
+
+    .right {
+        flex: 1 1 30%;
+        text-align: right;
+    }
+
+
+}
+
+.hotel-details>.left>div {
+    margin-bottom: 3rem;
+    line-height: 2.5rem;
+}
+
+.hotel-details>.right {
+    text-align: right;
+
+    .image {
+        height: 250px;
+        width: 350px;
+    }
+}
+
+.user-details>.left>div {
+    margin-bottom: 2rem;
+}
+
+.user-details>.right>div {
+    margin-bottom: 2rem;
+}
+
+p>strong {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 3.5;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+p {
+    font-size: 14px;
+}
+
+.payment-details {
+    div {
+        margin-bottom: 2.5rem;
+    }
+
+    table {
+        border-collapse: collapse;
+
+        tbody {
+            display: none;
+        }
+
+        tfoot {
+            display: none;
+        }
+
+        .table-row {
+            border: solid 1px #d6d6d6;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        thead>.table-row {
+            font-size: 16px;
+        }
+
+        tfoot>.table-row {
+            font-weight: 600;
+            line-height: 2.5;
+        }
+
+        width: 100%;
+        font-size: 20px;
+
+        .left-cell {
+            text-align: left;
+            padding: 10px 20px;
+        }
+
+        .right-cell {
+            text-align: right;
+            padding: 10px 20px;
+        }
+        .discount>.left-cell {
+            opacity: 0.6;
+        }
+
+    }
+
+}
+
+.help {
+    margin-top: 0rem;
+
+    a {
+        font-size: 16px;
+        color: #ee2a24;
+    }
+
+    div>p {
+        font-weight: 600;
+        margin-top: 2rem;
+    }
+
+    
+}
+
+
+
+@media (max-width: $small) {
+    .image {
+        width: 100%;
+    }
+
+    .book-details-container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .row-flex {
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,50 @@
+$small: 750px;
+.column-flex{
+    display: flex;
+    flex-direction: column;
+}
+.section {
+    margin-top: 1rem;
+}
+.confirmation-page {
+    width: 80%;
+    margin: 2rem auto;   
+    .shadow{
+        box-shadow: 2px 4px 8px 0 rgb(0 0 0 / 10%);
+        border: solid 1px #d6d6d6;
+    }
+    .header {
+        margin-top: 1rem;
+        .text {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.71;
+        }
+        .confirm{            
+            color: #1ab64f;
+        }
+        .cancelled{
+            color: #ee2e24
+        }
+        .conform-sub-text{
+            font-size: 16px;
+            line-height: 1.56;
+            color: #222;
+            margin: 0px;
+            font-weight: 600;
+        }
+        .print-button{
+            margin-top: 34px;
+            width: 150px;
+        }
+        .right{
+            text-align: right;
+        }
+    }
+    
+}
+@media (max-width: $small) {
+    .confirmation-page{            
+        width: 90%;
+    }   
+}

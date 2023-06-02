@@ -1,0 +1,47 @@
+.carousel-primary {
+  position: relative;
+
+  .cards {
+    position: relative;
+
+    .content {
+      display: flex;
+      overflow-x: scroll;
+      @include hideScrollbar;
+      scroll-behavior: smooth;
+    }
+
+    .content.grab-active {
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+    }
+
+    .arrow-left,
+    .arrow-right {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10rem;
+      height: 40rem;
+      @include flexCenter;
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+        background-color: $color-light;
+        border-radius: 50%;
+        @include flexCenter;
+        box-shadow: $shadow-2;
+        cursor: pointer;
+      }
+    }
+    .arrow-left {
+      left: 0;
+      background: linear-gradient(90deg, rgba($color-background-1, 0.5) 0%, rgba($color-background-1, 0) 100%);
+    }
+    .arrow-right {
+      right: 0;
+      background: linear-gradient(90deg, rgba($color-background-1, 0) 0%, rgba($color-background-1, 0.5) 100%);
+    }
+  }
+}

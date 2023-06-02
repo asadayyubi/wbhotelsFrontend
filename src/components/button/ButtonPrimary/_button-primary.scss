@@ -1,0 +1,24 @@
+.button-primary-comp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: $color-secondary-2;
+  color: $color-light;
+  transition: $transition-1;
+
+  svg {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  p {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    background-color: $color-secondary-3;
+  }
+}

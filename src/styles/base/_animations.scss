@@ -1,0 +1,63 @@
+@keyframes fadeIn {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(1.2);
+  }
+  to {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
+@keyframes flipY {
+  from {
+    transform: rotateY(0deg) scale(1.2);
+  }
+  to {
+    transform: rotateY(360deg) scale(1.2);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) scale(1.2);
+  }
+  50% {
+    transform: translateY(2rem) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1.2);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateX(-50%) translateY(-2rem);
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
