@@ -1,54 +1,54 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import parse from 'autosuggest-highlight/parse';
-import throttle from 'lodash/throttle';
-import "./autoStyle.css"
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import parse from "autosuggest-highlight/parse";
+import throttle from "lodash/throttle";
+import "./autoStyle.css";
 import usePlacesAutocomplete, {
-    getGeocode,
-    getLatLng,
-  } from 'use-places-autocomplete';
-import { LoginContext } from '../../Contexts/LoginContext';
-import { Tooltip } from '@mui/material';
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
+import { LoginContext } from "../../Contexts/LoginContext";
+import { Tooltip } from "@mui/material";
 
 // This key was created specifically for the demo in mui.com.
 // You need to create a new one for your application.
-const GOOGLE_MAPS_API_KEY = 'AIzaSyBPsL0YubbTmSDuPDksHgNpJDl2m95bFbg';
+const GOOGLE_MAPS_API_KEY = "AIzaSyBPsL0YubbTmSDuPDksHgNpJDl2m95bFbg";
 
 function loadScript(src, position, id) {
   if (!position) {
     return;
   }
 
-  const script = document.createElement('script');
-  script.setAttribute('async', '');
-  script.setAttribute('id', id);
+  const script = document.createElement("script");
+  script.setAttribute("async", "");
+  script.setAttribute("id", id);
   script.src = src;
   position.appendChild(script);
 }
 
-
 const autocompleteService = { current: null };
 
 export default function GoogleMaps(props) {
-    const {onPlaceSelected} = props;
-    const {autoCompleteSelectedValue, setAutoCompleteSelectedValue}  =  React.useContext(LoginContext);
+  const { onPlaceSelected } = props;
+  const { autoCompleteSelectedValue, setAutoCompleteSelectedValue } =
+    React.useContext(LoginContext);
   const [value, setValue] = React.useState(null);
-  const [inputValue, setInputValue] = React.useState('');
+  const [inputValue, setInputValue] = React.useState("");
   const [options, setOptions] = React.useState([]);
   const [lat_Lng, setLatLng] = React.useState({});
   const loaded = React.useRef(false);
 
-  if (typeof window !== 'undefined' && !loaded.current) {
-    if (!document.querySelector('#google-maps')) {
+  if (typeof window !== "undefined" && !loaded.current) {
+    if (!document.querySelector("#google-maps")) {
       loadScript(
         `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&libraries=places`,
-        document.querySelector('head'),
-        'google-maps',
+        document.querySelector("head"),
+        "google-maps"
       );
     }
 
@@ -60,15 +60,15 @@ export default function GoogleMaps(props) {
       throttle((request, callback) => {
         autocompleteService.current.getPlacePredictions(request, callback);
       }, 200),
-    [],
+    []
   );
 
   React.useEffect(() => {
     console.log("autoComplete1:");
-    console.log("value:" , value);
-    console.log("inputValue:" , inputValue);
-    console.log("options:" , options);
-    onPlaceSelected(value, (inputValue || autoCompleteSelectedValue), lat_Lng);
+    console.log("value:", value);
+    console.log("inputValue:", inputValue);
+    console.log("options:", options);
+    onPlaceSelected(value, inputValue || autoCompleteSelectedValue, lat_Lng);
     let active = true;
 
     if (!autocompleteService.current && window.google) {
@@ -79,7 +79,7 @@ export default function GoogleMaps(props) {
       return undefined;
     }
 
-    if (inputValue === '') {
+    if (inputValue === "") {
       setOptions(value ? [value] : []);
       return undefined;
     }
@@ -107,31 +107,31 @@ export default function GoogleMaps(props) {
 
   function setSelectedValue(selectedValue) {
     setValue(selectedValue);
-    if(selectedValue) {
+    if (selectedValue) {
       getGeocode({ address: selectedValue.description })
-       .then(results => getLatLng(results[0]))
-       .then(({ lat, lng }) => setLatLng({lat,lng}))
-       .catch(error => console.log('😱 Error: ', error));
+        .then((results) => getLatLng(results[0]))
+        .then(({ lat, lng }) => setLatLng({ lat, lng }))
+        .catch((error) => console.log("😱 Error: ", error));
     }
- }
- function handleSelect({ description }){
-   return () => {
-     setValue(description, false);
+  }
+  function handleSelect({ description }) {
+    return () => {
+      setValue(description, false);
 
-     // Get latitude and longitude via utility functions
-     getGeocode({ address: description })
-       .then(results => getLatLng(results[0]))
-       .then(({ lat, lng }) => setLatLng({lat,lng}))
-       .catch(error => console.log('😱 Error: ', error));
-   };
- }
+      // Get latitude and longitude via utility functions
+      getGeocode({ address: description })
+        .then((results) => getLatLng(results[0]))
+        .then(({ lat, lng }) => setLatLng({ lat, lng }))
+        .catch((error) => console.log("😱 Error: ", error));
+    };
+  }
   return (
     <Autocomplete
       id="google-map-demo"
       getOptionLabel={(option) =>
-        typeof option === 'string' ? option : option.description
+        typeof option === "string" ? option : option.description
       }
-      style={{fontWeight: "bold", color: "red"}}
+      style={{ fontWeight: "bold", color: "red" }}
       filterOptions={(x) => x}
       options={options}
       autoComplete
@@ -140,20 +140,30 @@ export default function GoogleMaps(props) {
       value={autoCompleteSelectedValue}
       onChange={(event, newValue) => {
         setOptions(newValue ? [newValue, ...options] : options);
-        setSelectedValue(newValue);    
+        setSelectedValue(newValue);
       }}
       onInputChange={(event, newInputValue) => {
         setInputValue(newInputValue);
         setAutoCompleteSelectedValue(newInputValue);
       }}
       renderInput={(params) => (
-        <Tooltip title={autoCompleteSelectedValue} sx={{fontWeight: "bold", color: "red"}}><TextField  {...params} label="Search by city, hotel or neighbourhood" variant="standard" /></Tooltip>
+        <Tooltip
+          title={autoCompleteSelectedValue}
+          sx={{ fontWeight: "bold", color: "red" }}
+        >
+          <TextField
+            {...params}
+            label="Search by city, hotel or neighbourhood"
+            variant="standard"
+          />
+        </Tooltip>
       )}
       renderOption={(props, option) => {
-        const matches = option.structured_formatting.main_text_matched_substrings;
+        const matches =
+          option.structured_formatting.main_text_matched_substrings;
         const parts = parse(
           option.structured_formatting.main_text,
-          matches.map((match) => [match.offset, match.offset + match.length]),
+          matches.map((match) => [match.offset, match.offset + match.length])
         );
 
         return (
@@ -162,11 +172,12 @@ export default function GoogleMaps(props) {
               <Grid item>
                 <Box
                   component={LocationOnIcon}
-                  sx={{ color: 'text.secondary', mr: 2 }}
+                  sx={{ color: "text.secondary", mr: 2 }}
                 />
               </Grid>
               <Grid item xs>
-                {parts.map((part, index) => (
+                {parts.map((part, index) => {
+                  console.log(part, " from part");
                   <span
                     key={index}
                     style={{
@@ -174,11 +185,12 @@ export default function GoogleMaps(props) {
                     }}
                   >
                     {part.text}
-                  </span>
-                ))}
+                  </span>;
+                })}
 
                 <Typography variant="body2" color="text.secondary">
                   {option.structured_formatting.secondary_text}
+                  {"secondary"}
                 </Typography>
               </Grid>
             </Grid>

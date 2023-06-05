@@ -13,6 +13,8 @@ import { useSelector } from "react-redux";
 import Section from "./Section";
 import { LoginContext } from "../../Contexts/LoginContext";
 import axios from 'axios';
+import banner from "../../media/images/BANNER_up.jpg"
+import "./banner.css"
 
 const Landing = () => {
   const {setUserProfileDetails, userProfileDetails} = useContext(LoginContext);
@@ -44,6 +46,11 @@ const Landing = () => {
       <div className="search-cont">
         <h1>Over 45,000 Rooms Across 200+ Locations</h1>
         <SearchHotels />
+         {/* author:poojamai:02-06-2023: start */}
+         <div className="img-container">
+          <img src={banner} alt="Banner" />
+        </div>
+        {/* author:poojamai:02-06-2023: end */}
       </div>
       <Section title="Handpicked for you" data={hotels.handpicked} />
       <Section title="Favourites" data={hotels.favourite} />

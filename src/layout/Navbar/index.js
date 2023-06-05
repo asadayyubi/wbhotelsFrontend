@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
@@ -14,12 +14,40 @@ import { LoginContext } from "../../Contexts/LoginContext";
 const Navbar = () => {
   const { isLoggedIn, userProfileDetails } = useContext(LoginContext);
   const navigate = useNavigate();
+  const [filteredCity, setFilteredCity] = useState([]);
   const { cityMenu } = useSelector((state) => state.hotels);
   console.log(cityMenu);
   function onSeeAllClick() {
     navigate("/citylist");
   }
 
+  // author:asad:02/06/2023 start
+
+  useEffect(() => {
+    getFilteredCity(cityMenu);
+  },[])
+  const getFilteredCity = (cityMenu) => {
+    const filteredData = cityMenu.filter(({ city_name }) => {
+      if (
+        city_name === "Mumbai" ||
+        city_name === "Delhi" ||
+        city_name === "Pune" ||
+        city_name === "Rajasthan" ||
+        city_name === "Bangalore" ||
+        city_name === "Noida" ||
+        city_name === "Chennai" ||
+        city_name === "Kolkata" ||
+        city_name === "Hyderabad" ||
+        city_name === "Manali"
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    setFilteredCity(filteredData);
+  };
+  // author:asad:02/06/2023 end
   return (
     <div className="navbar">
       <div className="top">
@@ -88,8 +116,8 @@ const Navbar = () => {
         </div>
       </div>
       <div className="bottom">
-        {cityMenu.map((city, cityIndex) => {
-          console.log(city)
+        {filteredCity.map((city, cityIndex) => {
+          console.log(city);
           if (cityIndex < 10) {
             return (
               <div key={city.id} className="item-wrapper">

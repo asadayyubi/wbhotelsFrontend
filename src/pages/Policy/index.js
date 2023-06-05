@@ -1,5 +1,4 @@
-import "./policy.css"
-
+import "./policy.css";
 
 const Policy = () => {
   return (
@@ -8,20 +7,20 @@ const Policy = () => {
             <p style={{fontWeight: "bold", fontSize: "2.5rem", textAlign: "center", marginBottom: "2rem"}}>Privacy Policy</p>
             <p> */}
       {/* WB Hotels Introduction: WB Hotels recognizes the importance of the privacy of its users and also of maintaining the confidentiality of the information provided by its users as responsible data controllers and data processer. This Privacy Policy provides for the practices for handling and securing users’ Personal Information (defined hereunder) by WB Hotels and its subsidiaries and affiliates. This Privacy Policy is applicable to any person (‘User’) who purchases, intend to purchase or inquire about any product(s) or service(s) made available by WB HOTELS through any of WB HOTELS customer interface channels including its website, mobile site, mobile app & offline channels including call centers and offices (collectively referred herein as "Sales Channels"). For the purpose of this Privacy Policy, wherever the context so requires "you" or "your" shall mean User and the term or "we", "us", "our" shall mean WB HOTELS. For the purpose of this Privacy Policy, Website means the website(s), mobile site(s) and mobile app(s). By using or accessing the Website or other Sales Channels, the User hereby agrees with the terms of this Privacy Policy and the contents herein. If you disagree with this Privacy Policy please do not use or access our Website or other Sales Channels. This Privacy Policy does not apply to any website(s), mobile sites and mobile apps of third parties, even if their websites/products are linked to our Website. User should take note that information and privacy practices of WB HOTELS’s business partners, advertisers, sponsors or other sites to which WB HOTELS provides hyperlink(s), may be materially different from this Privacy Policy. Accordingly, it is recommended that you review the privacy statements and policies of any such third parties with whom they interact. This Privacy Policy is an integral part of your User Agreement with WB HOTELS and all capitalized terms used, but not otherwise defined herein, shall have the respective meanings as ascribed to them in the User Agreement. */}
-      <div class="policy__container">
-        <div class="policy__termtabswrap">
-          <ul class="policy__termtabs"></ul>
+      <div className="policy__container">
+        <div className="policy__termtabswrap">
+          <ul className="policy__termtabs"></ul>
         </div>
-        <div class="policy policy__terms">
+        <div className="policy policy__terms">
           <div>
             <div>
-              <div class="policy__hero">
-                <h1 class="policy__hero--heading u-textCapitalize">
+              <div className="policy__hero">
+                <h1 className="policy__hero--heading u-textCapitalize">
                   WB HOTELS & RESORTS Privacy Notice
                 </h1>
                 <span>Last updated: 08/03/2023</span>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
@@ -39,11 +38,11 @@ const Policy = () => {
                   </div>
                 </p>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <h1 class="policy__subHeading">
+                <h1 className="policy__subHeading">
                   Information about WB HOTELS & RESORTS
                 </h1>
                 <div>
@@ -52,16 +51,19 @@ const Policy = () => {
                       <div className="font-style">
                         In this privacy notice, references to “WB HOTELS &
                         RESORTS”, “WB HOTELS & RESORTS”, "we" or "us" or “our”
-                        are to Oravel Stays Singapore Pte. Limited (a company
-                        incorporated under the laws of Singapore) and its parent
+                        are to RateBotAi Pvt. Limited and its parent
                         company&nbsp;and its subsidiaries (the “
                         <a href="/terms?tab_id=tab-2">WB HOTELS & RESORTS</a>”).
                       </div>
                     </div>
                   </p>
                 </div>
-                <input type="checkbox" class="read-more-state" id="post-2" />
-                <div class="read-more-wrap">
+                <input
+                  type="checkbox"
+                  className="read-more-state"
+                  id="post-2"
+                />
+                <div className="read-more-wrap">
                   <div>
                     <p>
                       <div>
@@ -86,14 +88,16 @@ const Policy = () => {
                   for="post-2"
                   data-read-more="Read more"
                   data-read-less="Read less"
-                  class="read-more-trigger"
+                  className="read-more-trigger"
                 ></label>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <h1 class="policy__subHeading">Scope of our privacy notice</h1>
+                <h1 className="policy__subHeading">
+                  Scope of our privacy notice
+                </h1>
                 <div>
                   <p>
                     <div>
@@ -122,7 +126,7 @@ const Policy = () => {
                   </p>
                 </div>
                 <input type="checkbox" class="read-more-state" id="post-3" />
-                <div class="read-more-wrap">
+                <div className="read-more-wrap">
                   <div>
                     <p>
                       <div>
@@ -199,14 +203,78 @@ const Policy = () => {
                   for="post-3"
                   data-read-more="Read more"
                   data-read-less="Read less"
-                  class="read-more-trigger"
+                  className="read-more-trigger"
                 ></label>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <h1 class="policy__subHeading">
+                <div className="policy__subHeading">
+                  Reservations, Amendent and Cancellation
+                </div>
+                <p>
+                  <div>
+                    <div className="font-style">
+                      All reservations are subject to availability. Reservations
+                      made on this site are considered conditional until a
+                      confirmation number is given to the guest to substantiate
+                      the reservations by email or fax. The hotel may, from time
+                      to time, communicate with the guests, to re-confirm the
+                      reservations and to prevent any simulated bookings.
+                    </div>
+                  </div>
+                </p>
+                <p>
+                  <div className="font-style">
+                    <div>
+                      Should the guests wish to amend any reservations,
+                      modifications may be made on the website at the earliest
+                      convenience. The Hotel will not be liable should it fail
+                      to provide its products and services due to
+                      unavailability.
+                    </div>
+                  </div>
+                </p>
+                <p>
+                  <div>
+                    <div className="font-style">
+                      In the event that the hotel, for reasons beyond its
+                      control, need to reject or change a confirmed reservations
+                      it will use all reasonable attempt to facilitate the
+                      circumstances however if no alternative is provided to the
+                      Client, the hotel will return any deposit made and
+                      considered it cancelled. This is the limit of the hotel's
+                      liability.
+                    </div>
+                  </div>
+                </p>
+                <p>
+                  <div>
+                    <div className="font-style">
+                      The hotel reserves the right to impose a cancellation fee
+                      of per room per night in the event of a late cancellation
+                      notice or a no-show at the hotel.
+                    </div>
+                  </div>
+                </p>
+                <p>
+                  <div>
+                    <div className="font-style">
+                      Royal Orchid Hotels does not guarantee acknowledgement of
+                      reservations or transactions made on this site arising
+                      from unforeseen circumstances, omissions or errors that
+                      may sometimes occur
+                    </div>
+                  </div>
+                </p>
+              </div>
+              <div className="policy__section"></div>
+            </div>
+            //
+            <div>
+              <div>
+                <h1 className="policy__subHeading">
                   Ways in which we obtain personal information
                 </h1>
                 <div>
@@ -304,14 +372,14 @@ const Policy = () => {
                   for="post-4"
                   data-read-more="Read more"
                   data-read-less="Read less"
-                  class="read-more-trigger"
+                  className="read-more-trigger"
                 ></label>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <h1 class="policy__subHeading">
+                <h1 className="policy__subHeading">
                   Categories of personal information
                 </h1>
                 <div>
@@ -354,8 +422,12 @@ const Policy = () => {
                     </div>
                   </p>
                 </div>
-                <input type="checkbox" class="read-more-state" id="post-5" />
-                <div class="read-more-wrap">
+                <input
+                  type="checkbox"
+                  className="read-more-state"
+                  id="post-5"
+                />
+                <div className="read-more-wrap">
                   <div>
                     <p>
                       <div>
@@ -543,14 +615,14 @@ const Policy = () => {
                   for="post-5"
                   data-read-more="Read more"
                   data-read-less="Read less"
-                  class="read-more-trigger"
+                  className="read-more-trigger"
                 ></label>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <h1 class="policy__subHeading">
+                <h1 className="policy__subHeading">
                   Purposes and lawful grounds of our processing personal
                   information
                 </h1>
@@ -573,7 +645,7 @@ const Policy = () => {
                   </p>
                 </div>
                 <input type="checkbox" class="read-more-state" id="post-6" />
-                <div class="read-more-wrap">
+                <div className="read-more-wrap">
                   <div>
                     <p>
                       <div>
@@ -713,7 +785,7 @@ const Policy = () => {
                   </p>
                 </div>
                 <input type="checkbox" class="read-more-state" id="post-7" />
-                <div class="read-more-wrap">
+                <div className="read-more-wrap">
                   <div>
                     <p>
                       <div>
@@ -847,14 +919,16 @@ const Policy = () => {
                   for="post-7"
                   data-read-more="Read more"
                   data-read-less="Read less"
-                  class="read-more-trigger"
+                  className="read-more-trigger"
                 ></label>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <div class="policy__subHeading">Marketing and Preferences</div>
+                <div className="policy__subHeading">
+                  Marketing and Preferences
+                </div>
                 <p>
                   <div>
                     <div className="font-style">
@@ -868,7 +942,7 @@ const Policy = () => {
                   </div>
                 </p>
                 <p>
-                  <div>
+                  <div className="font-style">
                     <div>
                       We also use technology to help us understand your personal
                       preferences and interests so that we can send
@@ -893,11 +967,11 @@ const Policy = () => {
                   </div>
                 </p>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <div class="policy__subHeading">
+                <div className="policy__subHeading">
                   Analytics and Advertising Services Provided by Others
                 </div>
                 <p>
@@ -925,7 +999,7 @@ const Policy = () => {
                         class="read-more-state"
                         id="post-undefined"
                       />
-                      <div class="read-more-wrap">
+                      <div className="read-more-wrap">
                         <div>
                           <p>
                             <div>
@@ -951,7 +1025,7 @@ const Policy = () => {
                         for="post-undefined"
                         data-read-more="Read more"
                         data-read-less="Read less"
-                        class="read-more-trigger"
+                        className="read-more-trigger"
                       ></label>
                     </div>
                   </div>
@@ -966,11 +1040,13 @@ const Policy = () => {
                   </div>
                 </p>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <div class="policy__subHeading">Sharing your information</div>
+                <div className="policy__subHeading">
+                  Sharing your information
+                </div>
                 <p>
                   <div>
                     <div className="font-style">
@@ -1088,11 +1164,11 @@ const Policy = () => {
                   </div>
                 </p>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <div class="policy__subHeading">
+                <div className="policy__subHeading">
                   Transfers outside of your country
                 </div>
                 <p>
@@ -1123,11 +1199,11 @@ const Policy = () => {
                   </div>
                 </p>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <h1 class="policy__subHeading">Retention period</h1>
+                <h1 className="policy__subHeading">Retention period</h1>
                 <div>
                   <p>
                     <div>
@@ -1141,8 +1217,12 @@ const Policy = () => {
                     </div>
                   </p>
                 </div>
-                <input type="checkbox" class="read-more-state" id="post-12" />
-                <div class="read-more-wrap">
+                <input
+                  type="checkbox"
+                  className="read-more-state"
+                  id="post-12"
+                />
+                <div className="read-more-wrap">
                   <div>
                     <p>
                       <div>
@@ -1206,14 +1286,14 @@ const Policy = () => {
                   for="post-12"
                   data-read-more="Read more"
                   data-read-less="Read less"
-                  class="read-more-trigger"
+                  className="read-more-trigger"
                 ></label>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <h1 class="policy__subHeading">Your rights</h1>
+                <h1 className="policy__subHeading">Your rights</h1>
                 <div>
                   <p>
                     <div>
@@ -1230,8 +1310,12 @@ const Policy = () => {
                     </div>
                   </p>
                 </div>
-                <input type="checkbox" class="read-more-state" id="post-13" />
-                <div class="read-more-wrap">
+                <input
+                  type="checkbox"
+                  className="read-more-state"
+                  id="post-13"
+                />
+                <div className="read-more-wrap">
                   <div>
                     <p>
                       <div>
@@ -1345,14 +1429,16 @@ const Policy = () => {
                   for="post-13"
                   data-read-more="Read more"
                   data-read-less="Read less"
-                  class="read-more-trigger"
+                  className="read-more-trigger"
                 ></label>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
             <div>
               <div>
-                <div class="policy__subHeading">Data protection contacts</div>
+                <div className="policy__subHeading">
+                  Data protection contacts
+                </div>
                 <p>
                   <div>
                     <div className="font-style">
@@ -1414,7 +1500,7 @@ const Policy = () => {
                   </div>
                 </p>
               </div>
-              <div class="policy__section"></div>
+              <div className="policy__section"></div>
             </div>
           </div>
         </div>
