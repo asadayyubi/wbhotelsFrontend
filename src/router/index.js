@@ -41,6 +41,8 @@ import ContactUs from "../pages/CancellationPage/ContactUs";
 import WhatsAppWidget from "react-whatsapp-chat-widget";
 import "react-whatsapp-chat-widget/index.css";
 import companyLogo from "../media/images/logowithtext.png"
+import { Propertylisting } from "../pages/PropertyListing/Propertylisting";
+import Businesswb from "../pages/Wbbusiness/Businesswb";
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -82,7 +84,7 @@ const Router = () => {
         <Navbar2 />
         {/* author:asad:03-06-23: start */}
         <WhatsAppWidget
-          phoneNo="918048036907"
+          phoneNo="918591975256"
           position="right"
           iconSize="50"
           iconColor="white"
@@ -112,6 +114,8 @@ const Router = () => {
           <Route exact path="/hotelpage" element={<HotelPage />} />
           <Route exact path="/booking" element={<Booking />} />
           <Route exact path="/booking-fetching" element={<FetchStatus />} />
+          <Route exact path="/property-listing" element={<Propertylisting />} />
+          <Route exact path="/business-wb" element={<Businesswb />} />
           <Route
             exact
             path="/confirmationpage"

@@ -44,7 +44,7 @@ const FilterComponent = function (props) {
       const { filter_info } = searchResults;
       // console.log("fiterInfo -> ",filter_info      );
       return (
-        <div className="left">
+        <div className="left" >
           <div className="header">
             <h1>Filter</h1>
             <div className="btn">Clear all</div>

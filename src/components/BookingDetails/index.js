@@ -1,15 +1,29 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Divider from '@mui/material/Divider';
 import KeyboardArrowDownSharpIcon from '@mui/icons-material/KeyboardArrowDownSharp';
 import KeyboardArrowUpSharpIcon from '@mui/icons-material/KeyboardArrowUpSharp';
 import { useContext } from "react";
 import { LoginContext } from "../../Contexts/LoginContext";
+import defaultImage from "../../media/images/defaultImage.jpg"
 export default function BookDetails(props) {
   const { bookInfo } = props;
+  console.log(bookInfo);
   const {searchParams} = useContext(LoginContext);
   const [isArrowDown1, setIsArrowDown1] = useState(true);
   const [isArrowDown2, setIsArrowDown2] = useState(true);
+  const [todayDate,setTodayDate] = useState("");
 
+
+  function formatDateWithDay(dateString) {
+    const options = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
+    const date = new Date(dateString);
+    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+    setTodayDate(formattedDate);
+  }
+  
+  useEffect(() => {
+    formatDateWithDay(bookInfo?.from_date)
+  },[])
   function displayTableBody() {
     setIsArrowDown1(!isArrowDown1);
     const tableBody = document.getElementById('table-body');
@@ -45,7 +59,7 @@ export default function BookDetails(props) {
           <div style={{ fontSize: '20px', lineHeight: '2.5' }}>{bookInfo.booking_id}</div>
         </div>
         <div className='right'>
-          <p>Booked by {bookInfo.first_name} on Mon, 24 Oct 2022</p>
+          <p>Booked by {bookInfo.first_name} {todayDate}</p>
         </div>
       </div>
       <Divider variant="middle" />
@@ -59,10 +73,12 @@ export default function BookDetails(props) {
             <h3>Hotel Direction</h3>
             <p>{bookInfo?.hotel_direction}</p>
           </div>
-          <div><h3>{bookInfo?.land_mark}</h3></div>
+          <div><h3>Land Mark</h3>
+          <p>{bookInfo?.land_mark}</p>
+          </div>
         </div>
-        <div className='right'>
-          <img className='image' src={bookInfo?.hotel_gallery? bookInfo.hotel_gallery[0].file : 'http://ratebotai.com/python_assets/pic2.jpeg'} alt={''} ></img>
+        <div className='right' style={{padding:"2rem"}}>
+          <img className='image'  src={bookInfo?.hotel_gallery?bookInfo.hotel_gallery[0].file : defaultImage} alt={'hotel image'} ></img>
         </div>
       </div>
       <Divider variant="middle" />

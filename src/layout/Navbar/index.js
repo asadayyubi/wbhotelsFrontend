@@ -68,12 +68,12 @@ const Navbar = () => {
             <div className="icon">
               <BusinessCenterOutlinedIcon />
             </div>
-            <div className="details">
+            <div className="details" onClick={() => navigate("/business-wb") }>
               <h3>WB for Business</h3>
               <p>Corporate booking solution</p>
             </div>
           </div>
-          <div className="card">
+          <div className="card" onClick={() => navigate("/property-listing") }>
             <div className="icon">
               <HouseOutlinedIcon />
             </div>

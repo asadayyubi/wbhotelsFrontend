@@ -34,7 +34,7 @@ const Section = (props) => {
         </div>
         <ScrollContainer className="flex" innerRef={secRef}>
           {data.map((hotel) => (
-            <CardPrimary key={hotel.id} data={hotel} onClickCard={() => navigate("/hotelpage", { state: { data: hotel.id } })} />
+            <CardPrimary key={hotel.id} data={hotel} onClickCard={() => navigate("/hotelpage", { state: { data: hotel.id } })} /> 
           ))}
         </ScrollContainer>
         <div className="btn-right" onClick={() => scrollSec("r", secRef)}>

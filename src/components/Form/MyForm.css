@@ -1,0 +1,70 @@
+/* MyForm.css */
+
+.form-card {
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .tick-icon {
+    font-size: 64px;
+    color: green;
+    margin-bottom: 10px;
+  }
+  
+ /* MyForm.css */
+
+.input-field {
+    margin-bottom: 20px;
+    padding: 0.5rem;
+  }
+  /* MyForm.css */
+
+.form-container {
+    background-color: #ececec;
+    border-radius: 10px;
+    padding: 20px;
+    animation: formAnimation 0.5s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes formAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .input-field {
+      margin-bottom: 15px;
+    }
+  }
+  
+  
