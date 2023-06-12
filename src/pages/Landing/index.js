@@ -1,4 +1,4 @@
-import React, {useRef, useContext, useEffect } from "react";
+import React, {useRef, useContext, useEffect, useState } from "react";
 import SearchHotels from "../../components/SearchHotels";
 import Navbar from "../../layout/Navbar";
 import ScrollContainer from "react-indiana-drag-scroll";
@@ -14,11 +14,13 @@ import Section from "./Section";
 import { LoginContext } from "../../Contexts/LoginContext";
 import axios from 'axios';
 import banner from "../../media/images/BANNER_up.jpg"
+import mobBanner from "../../media/images/150-01.jpg"
 import "./banner.css"
 
 const Landing = () => {
   const {setUserProfileDetails, userProfileDetails} = useContext(LoginContext);
   const sec2Ref = useRef();
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     if(userProfileDetails?.id) {
       axios.post('https://api.ratebotai.com:8443/get_customer_info_data', {user_id: userProfileDetails.id}).then((response) => {
@@ -39,6 +41,25 @@ const Landing = () => {
       ref.current.scrollLeft += scrollValue;
     }
   }
+  
+
+  useEffect(() => {
+    const handleResize = () => {
+      console.log(window.innerWidth <= 756);
+      setIsMobile(window.innerWidth <= 650); // Change the breakpoint as per your needs
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Initial check for mobile screen
+    handleResize();
+    console.log(isMobile);
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
 
   return (
     <div className="landing">
@@ -48,7 +69,8 @@ const Landing = () => {
         <SearchHotels />
          {/* author:poojamai:02-06-2023: start */}
          <div className="img-container">
-          <img src={banner} alt="Banner" />
+          <img src={isMobile ? mobBanner : banner} alt="Banner" />
+          {/* <h2>{isMobile ? "isMobile" : "laptop"}</h2> */}
         </div>
         {/* author:poojamai:02-06-2023: end */}
       </div>

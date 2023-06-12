@@ -87,7 +87,7 @@ const Navbar = () => {
               <PhoneIcon />
             </div>
             <div className="details">
-              <h3>80480 36907</h3>
+              <h3>080480 36907</h3>
               <p>Call us to book now</p>
             </div>
           </div>
