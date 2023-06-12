@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+    .main-container{
+        height: 50vh;
+    }
+    .contactus-container {
+   flex-direction: column; 
+   align-items: center;
+    }
+    .first {
+        margin-bottom: 3.5rem;
+        width: 240px;
+    }
+    .second {
+        width: 240px;
+    }
+}
