@@ -1,5 +1,6 @@
 import SliderInput from "../../components/SliderInput";
 import { Switch } from "@mui/material";
+import "./filterComponent.css"
 const selectedFilter = [];
 
 const FilterComponent = function (props) {
@@ -44,6 +45,7 @@ const FilterComponent = function (props) {
       const { filter_info } = searchResults;
       // console.log("fiterInfo -> ",filter_info      );
       return (
+        <div className="sticky-container">
         <div className="left" >
           <div className="header">
             <h1>Filter</h1>
@@ -91,6 +93,7 @@ const FilterComponent = function (props) {
             })}
           </div>
         </div>
+      </div>
       )
     }
 };

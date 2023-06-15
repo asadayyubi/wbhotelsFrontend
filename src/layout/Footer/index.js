@@ -13,6 +13,9 @@ import { Link } from "react-router-dom";
 import "./footerdemo.css";
 
 const Footer = () => {
+  const handleBannerClick = () => {
+    window.location.href = 'https://play.google.com/store/apps/details?id=io.wbhotel.com&pli=1';
+  };
   return (
     <>
       <div className="footer">
@@ -35,7 +38,7 @@ const Footer = () => {
                 <img src={appStoreBadge} alt="app store badge" />
               </div>
               <div className="google-play-badge">
-                <img src={googlePlayBadge} alt="google play badge" />
+                <img src={googlePlayBadge} alt="google play badge" onClick={handleBannerClick}/>
               </div>
             </div>
           </div>

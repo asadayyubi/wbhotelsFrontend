@@ -69,4 +69,10 @@
   .sidebar .filter p {
     margin-left: 8px;
   }
-  
+  @media only screen and (min-width: 900px) {
+  .sticky-container {
+    position: sticky;
+    top: 0;
+    align-self: flex-end;
+  }
+}
