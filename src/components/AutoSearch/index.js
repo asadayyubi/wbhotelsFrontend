@@ -14,9 +14,6 @@ import usePlacesAutocomplete, {
 } from "use-places-autocomplete";
 import { LoginContext } from "../../Contexts/LoginContext";
 import { Tooltip } from "@mui/material";
-import { useEffect } from "react";
-import { getHotelByWordSearch } from "../../apis/searchHotel.api";
-import { useState } from "react";
 
 // This key was created specifically for the demo in mui.com.
 // You need to create a new one for your application.
@@ -41,11 +38,9 @@ export default function GoogleMaps(props) {
   const { autoCompleteSelectedValue, setAutoCompleteSelectedValue } =
     React.useContext(LoginContext);
   const [value, setValue] = React.useState(null);
-  const [data,setData] = React.useState([]);
   const [inputValue, setInputValue] = React.useState("");
   const [options, setOptions] = React.useState([]);
   const [lat_Lng, setLatLng] = React.useState({});
-  const [isInitialRender, setIsInitialRender] = useState(true);
   const loaded = React.useRef(false);
 
   if (typeof window !== "undefined" && !loaded.current) {
@@ -60,30 +55,6 @@ export default function GoogleMaps(props) {
     loaded.current = true;
   }
 
-  // debouncing// author:asad:06-06-23:start
-  useEffect(() => {
-    if (isInitialRender) {
-      setIsInitialRender(false);
-      return;
-    }
-
-    const delayDebounceFn = setTimeout(() => {
-      // Make API call here
-      getHotelByWordSearch({"search_text":inputValue}, 10, setData);
-    }, 300);
-
-    return () => {
-      clearTimeout(delayDebounceFn);
-    };
-  }, [inputValue, isInitialRender]);
-
-  // author:asad:06-06-23:end
-
-  // useEffect(() => {
-  //   getHotelByWordSearch({"search_text":inputValue}, 10, setData);
-  //   console.log(data);
-  // },[inputValue])
-
   const fetch = React.useMemo(
     () =>
       throttle((request, callback) => {
@@ -93,11 +64,10 @@ export default function GoogleMaps(props) {
   );
 
   React.useEffect(() => {
-    console.log("autoComplete1:");
-    console.log("value:", value);
-    console.log("inputValue:", inputValue);
-    console.log("options:", options);
-    console.log(data,"from data")
+    // console.log("autoComplete1:");
+    // console.log("value:", value);
+    // console.log("inputValue:", inputValue);
+    // console.log("options:", options);
     onPlaceSelected(value, inputValue || autoCompleteSelectedValue, lat_Lng);
     let active = true;
 
@@ -114,21 +84,24 @@ export default function GoogleMaps(props) {
       return undefined;
     }
 
-    fetch({ input: inputValue }, (results) => {
-      if (active) {
-        let newOptions = [];
+    fetch(
+      { input: inputValue, componentRestrictions: { country: "IN" } },
+      (results) => {
+        if (active) {
+          let newOptions = [];
 
-        if (value) {
-          newOptions = [value];
+          if (value) {
+            newOptions = [value];
+          }
+
+          if (results) {
+            newOptions = [...newOptions, ...results];
+          }
+
+          setOptions(newOptions);
         }
-
-        if (results) {
-          newOptions = [...newOptions, ...results];
-        }
-
-        setOptions(newOptions);
       }
-    });
+    );
 
     return () => {
       active = false;
@@ -205,9 +178,8 @@ export default function GoogleMaps(props) {
                   sx={{ color: "text.secondary", mr: 2 }}
                 />
               </Grid>
-              <Grid item xs>
-                {parts.map((part, index) => {
-                  console.log(part);
+              <Grid item md>
+                {parts.map((part, index) => (
                   <span
                     key={index}
                     style={{
@@ -215,12 +187,11 @@ export default function GoogleMaps(props) {
                     }}
                   >
                     {part.text}
-                  </span>;
-                })}
+                  </span>
+                ))}
 
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="h5" color="text.secondary">
                   {option.structured_formatting.secondary_text}
-
                 </Typography>
               </Grid>
             </Grid>
