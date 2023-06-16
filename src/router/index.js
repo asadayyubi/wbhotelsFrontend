@@ -151,7 +151,7 @@ const Router = () => {
            <Route exact path="/investor-relation" element={<InvestorRelation/>} />
           <Route exact path="/cancellation" element={<Cancellation/>} />
           <Route exact path="/contact-us" element={<ContactUs />} />
-          <Route exact path="/refund-policy" element={<RefundPolicy />} />
+          <Route exact path="/manage-booking" element={<RefundPolicy />} />
           <Route
             exact
             path="/airpay/responseairpay"
