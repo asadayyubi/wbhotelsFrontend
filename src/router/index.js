@@ -35,7 +35,7 @@ import CityList from "../pages/CityList";
 import FetchStatus from "../pages/Booking/FetchStatus";
 import AirpayResponse from "../airpay";
 import TermsAndConditions from "../pages/TermsAndConditions";
-import CancellationPolicy from "../pages/CancellationPage/CancellationPolicy";
+import Careers from "../pages/CancellationPage/Careers";
 import RefundPolicy from "../pages/CancellationPage/RefundPolicy";
 import ContactUs from "../pages/CancellationPage/ContactUs";
 import WhatsAppWidget from "react-whatsapp-chat-widget";
@@ -43,7 +43,12 @@ import "react-whatsapp-chat-widget/index.css";
 import companyLogo from "../media/images/logowithtext.png"
 import { Propertylisting } from "../pages/PropertyListing/Propertylisting";
 import Businesswb from "../pages/Wbbusiness/Businesswb";
+<<<<<<< HEAD
 import Support from "../pages/Support/Support";
+=======
+import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
+import Cancellation from "../pages/CancellationPage/Cancellation";
+>>>>>>> 4fd8c7d2d6b7bb6be8932548af01ea12a9a24f16
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -143,11 +148,13 @@ const Router = () => {
             path="/terms-and-conditions"
             element={<TermsAndConditions />}
           />
-          <Route
+           <Route
             exact
-            path="/cancellation-policy"
-            element={<CancellationPolicy />}
+            path="/careers"
+            element={<Careers />}
           />
+           <Route exact path="/investor-relation" element={<InvestorRelation/>} />
+          <Route exact path="/cancellation" element={<Cancellation/>} />
           <Route exact path="/contact-us" element={<ContactUs />} />
           <Route exact path="/refund-policy" element={<RefundPolicy />} />
           <Route

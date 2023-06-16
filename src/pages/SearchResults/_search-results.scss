@@ -5,6 +5,10 @@
   .left {
     flex: 1;
     border-right: 1px solid rgba($color-grey-3, 0.5);
+    position: sticky;
+    top: 7rem;
+    align-self: flex-start;
+   
 
     .header {
       display: flex;

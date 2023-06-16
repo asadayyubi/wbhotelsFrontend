@@ -50,13 +50,20 @@ const Footer = () => {
           <div className="flex">
             <div className="col">
               <a href="/about-us">About us</a>
-              <a href="/cancellation-policy">Cancellation Policy</a>
+              <a href="/careers">Careers</a>
+              <a href="/investor-relation">Investor relations</a>
+              <a href="/cancellation">Cancellation Policy</a>
               <a href="/refund-policy">Refund Policy</a>
               <a href="/contact-us">Contact Us</a>
             </div>
             <div className="col">
+<<<<<<< HEAD
               <a href="/support">Support</a>
               <a href="/">Investor relations</a>
+=======
+              <a href="/">Support</a>
+             
+>>>>>>> 4fd8c7d2d6b7bb6be8932548af01ea12a9a24f16
               <a href="/terms-and-conditions">Terms and conditions</a>
               <Link to="/policy">Privacy policy</Link>
             </div>

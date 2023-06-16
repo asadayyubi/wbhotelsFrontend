@@ -1,0 +1,139 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: Optima, sans-serif; */
+  }
+
+  /* div1 start from here */
+.section-block .investor-bg-img {
+    background-image: url(../../media/images/investor-relation-banner.jpg);
+    height: 650px;
+    width: 100%;
+    background-size: cover;
+    border-bottom: 1px solid #888282;
+    /* width: 85%; */
+    /* margin: auto; */
+  }
+
+  .section-block .investor-heading {
+    font-family: Optima, sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 50px;
+    white-space: normal;
+    padding-bottom: 35px;
+    text-shadow: 0 2px 4px rgba(36, 33, 33, 0.7);
+    padding-left: 50px;
+    padding-top: 80px;
+  }
+
+  .section-block .inverstor-main-content{
+    font-family: Optima, sans-serif;
+    font-weight: 600;
+  
+    text-align: justify;
+    width: 60%;
+    padding-left: 50px;
+    /* color: #fff; */
+    /* margin: auto; */
+    /* border: 2px solid red; */
+    /* padding-bottom: 15px; */
+    text-shadow: 0 2px 4px rgba(94, 89, 89, 0.7);
+   
+  }
+  .section-block .inverstor-main-content .investor-para{
+    font-size: 18px;
+    line-height: 22px;
+    white-space: normal;
+  }
+/* div1 end here */
+
+/* div2 start from here */
+
+  .contents-inv-rel .x_7b2817bf{
+    font-size: 65px;
+    line-height: 60px;
+    width: 85%;
+    margin: auto;
+    padding-top: 30px;
+   
+  }
+
+  
+
+  .contents-inv-rel .annual-report{
+    font-size: 24px;
+    width: 85%;
+    margin: auto;
+    padding-top: 30px;
+  }
+
+  .contents-inv-rel .coming-soon{
+    width: 85%;
+    margin: auto;
+    padding-top: 20px;
+    border-bottom: 1px solid #888282;
+    padding-bottom: 60px
+    
+  }
+
+  .investorRelation-contact{
+    width: 85%;
+    margin: auto;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    
+  }
+  .investorRelation-contact h4{
+    font-size: 18px;
+    margin-top: 25px;
+  }
+
+  .investorRelation-contact p{
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+
+    .section-block .investor-bg-img {
+      height: 700px;
+    }
+
+
+    .section-block .investor-heading {
+      font-size: 40px;
+      padding-bottom: 20px;
+      padding-top: 30px;
+      padding-left: 20px;
+    }
+
+    .section-block .inverstor-main-content{
+      font-family: Optima, sans-serif;
+      font-weight: 600;
+      text-align: justify;
+      width: 95%;
+      padding-left: 20px;
+      text-shadow: 0 2px 4px rgba(94, 89, 89, 0.7);
+     
+    }
+    .section-block .inverstor-main-content .investor-para{
+      font-size: 18px;
+      line-height: 22px;
+      white-space: normal;
+    }
+
+    .contents-inv-rel .x_7b2817bf{
+      font-size: 35px;
+      line-height: 35px;
+      width: 85%;
+      margin: auto;
+      padding-top: 30px;
+     
+    }
+  
+
+
+  }
