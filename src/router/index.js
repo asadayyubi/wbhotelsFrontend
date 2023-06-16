@@ -43,8 +43,12 @@ import "react-whatsapp-chat-widget/index.css";
 import companyLogo from "../media/images/logowithtext.png"
 import { Propertylisting } from "../pages/PropertyListing/Propertylisting";
 import Businesswb from "../pages/Wbbusiness/Businesswb";
+<<<<<<< HEAD
+import Support from "../pages/Support/Support";
+=======
 import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
 import Cancellation from "../pages/CancellationPage/Cancellation";
+>>>>>>> 4fd8c7d2d6b7bb6be8932548af01ea12a9a24f16
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -138,6 +142,7 @@ const Router = () => {
           <Route exact path="/policy" element={<Policy />} />
           <Route exact path="/about-us" element={<AboutUs />} />
           <Route exact path="/rating" element={<Rating />} />
+          <Route exact path="/support" element={<Support />} />
           <Route
             exact
             path="/terms-and-conditions"

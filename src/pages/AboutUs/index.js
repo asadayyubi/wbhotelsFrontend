@@ -22,10 +22,13 @@ const AboutUs = () => {
             </p> 
         </div>         
         </div>
-        <h1 style={{textAlign:"center", marginBottom:"2rem", marginTop:"-18rem"}}>Our Team</h1>
-        <div style={{display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridGap: "40px", gridRowGap: "30px", marginBottom:"2rem", width:"80%", margin:"auto"}}>
+        <h1 style={{textAlign:"center", marginBottom:"4rem", marginTop:"-18rem"}}>Our Team</h1>
+        <div style={{display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridGap: "40px", gridRowGap: "30px", marginBottom:"4rem", width:"80%", margin:"auto"}}>
             {cardData.map((item, i) => <Teamcard key={i} {...item} style={{   flexBasis: 'auto', flexGrow: "1", width: "100%"}}/> ) }       
         </div>
+        {/* <div>
+        <h1 style={{textAlign:"center", marginBottom:"2rem", marginTop:"5rem"}}>Our Achievements</h1> 
+        </div> */}
         </>
     )
 }
