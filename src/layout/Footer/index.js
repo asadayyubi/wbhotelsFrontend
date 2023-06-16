@@ -9,10 +9,11 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import logoImg from "../../media/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./footerdemo.css";
 
 const Footer = () => {
+  const navigate = useNavigate()
   const handleBannerClick = () => {
     window.location.href = 'https://play.google.com/store/apps/details?id=io.wbhotel.com&pli=1';
   };
@@ -23,7 +24,7 @@ const Footer = () => {
           <div className="left">
             <div className="action">
               <h1>Join our network and grow your business!</h1>
-              <ButtonPrimary
+              <ButtonPrimary onClick={() => navigate("/property-listing") }
                 text="List your property"
                 icon={<ApartmentIcon />}
               />

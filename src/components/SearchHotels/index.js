@@ -354,7 +354,7 @@ const SearchHotels = (props) => {
 
         {calendarVisible && (
           <div className="calendar-range">
-            <DateRangePicker value={range} setvalue={onSetRange} />
+            <DateRangePicker value={range} setvalue={onSetRange} /> 
           </div>
         )}
       </div>
