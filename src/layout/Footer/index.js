@@ -57,7 +57,7 @@ const Footer = () => {
              
             </div>
             <div className="col">
-              <a href="/">Support</a>
+              <a href="/support">Support</a>
               <a href="/manage-booking">Manage Booking</a>
               <a href="/contact-us">Contact Us</a>
               <a href="/terms-and-conditions">Terms and conditions</a>
