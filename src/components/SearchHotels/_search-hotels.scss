@@ -191,6 +191,7 @@
   .btn {
     grid-area: "btn";
     flex: 2 0 3rem;
+    font-size: 14px;
     background-color: $color-secondary-2;
     @include flexCenter;
     color: $color-light;
@@ -223,6 +224,7 @@
     .btn {
       padding: .1rem;
       flex: 1 1 100%;
+      font-size: 9px;
     }
   }
   // .search-hotels {
