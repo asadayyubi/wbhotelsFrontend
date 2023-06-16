@@ -1,13 +1,5 @@
-.hover-button{
-    background-color: #414E5F;
-    color: white
-}
-
-.hover-button:hover {
-    background-color: #0d9488;
-}
 @media (max-width: 768px) {
-    #main-container{
+    .main-container{
         height: 50vh;
     }
     .contactus-container {
@@ -22,5 +14,3 @@
         width: 240px;
     }
 }
-
-  
