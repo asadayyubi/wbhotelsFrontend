@@ -1,0 +1,10 @@
+.big-container{
+    border-bottom: 1px solid rgb(172, 203, 215);
+}
+
+.mystyle{
+    display: block;
+}
+.display-none {
+    display: none;
+}

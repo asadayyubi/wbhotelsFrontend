@@ -54,7 +54,7 @@ const Footer = () => {
               <a href="/contact-us">Contact Us</a>
             </div>
             <div className="col">
-              <a href="/">Support</a>
+              <a href="/support">Support</a>
               <a href="/">Investor relations</a>
               <a href="/terms-and-conditions">Terms and conditions</a>
               <Link to="/policy">Privacy policy</Link>
