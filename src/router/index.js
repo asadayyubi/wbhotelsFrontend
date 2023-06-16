@@ -43,12 +43,9 @@ import "react-whatsapp-chat-widget/index.css";
 import companyLogo from "../media/images/logowithtext.png"
 import { Propertylisting } from "../pages/PropertyListing/Propertylisting";
 import Businesswb from "../pages/Wbbusiness/Businesswb";
-<<<<<<< HEAD
 import Support from "../pages/Support/Support";
-=======
 import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
 import Cancellation from "../pages/CancellationPage/Cancellation";
->>>>>>> 4fd8c7d2d6b7bb6be8932548af01ea12a9a24f16
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -156,7 +153,7 @@ const Router = () => {
            <Route exact path="/investor-relation" element={<InvestorRelation/>} />
           <Route exact path="/cancellation" element={<Cancellation/>} />
           <Route exact path="/contact-us" element={<ContactUs />} />
-          <Route exact path="/refund-policy" element={<RefundPolicy />} />
+          <Route exact path="/manage-booking" element={<RefundPolicy />} />
           <Route
             exact
             path="/airpay/responseairpay"
