@@ -12,6 +12,8 @@ import three from "../../media/images/number-3.png";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { Repeat } from "@mui/icons-material";
 import "./support.css"
+import WhatsAppWidget from "react-whatsapp-chat-widget";
+import companyLogo from "../../media/images/logowithtext.png"
 
 const Support = () => {
   const [isStyleVisible, setIsStyleVisible] = useState(false);
@@ -38,6 +40,10 @@ const Support = () => {
   const toggleStyle5 = () => {
     setIsStyleVisible5(!isStyleVisible5);
   };
+  const handleImageClick = () => {
+    window.open("https://api.whatsapp.com/send/?phone=918591975256&text&type=phone_number&app_absent=0")
+  }
+
   return (
     <div style={{ backgroundColor: "#f5f5f5" , marginTop:"-30px", marginBottom:"-25px" }}>
       <div  className="big-container" style={{ width: "75%", margin: "30px auto", minHeight: "100vh"}}>
@@ -65,6 +71,7 @@ const Support = () => {
               <img
                 src={mlogo}
                 alt="message icon"
+                onClick={handleImageClick}
                 style={{
                   width: "80px",
                   height: "80px",
