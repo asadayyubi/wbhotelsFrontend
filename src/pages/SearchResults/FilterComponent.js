@@ -46,7 +46,7 @@ const FilterComponent = function (props) {
       // console.log("fiterInfo -> ",filter_info      );
       return (
         
-        <div className="left" >
+        <div className="left filter-left" >
           <div className="header">
             <h1>Filter</h1>
             <div className="btn">Clear all</div>
