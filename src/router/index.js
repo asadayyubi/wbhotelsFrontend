@@ -46,6 +46,7 @@ import Businesswb from "../pages/Wbbusiness/Businesswb";
 import Support from "../pages/Support/Support";
 import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
 import Cancellation from "../pages/CancellationPage/Cancellation";
+import Member from "../pages/Member/Member";
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -140,6 +141,7 @@ const Router = () => {
           <Route exact path="/about-us" element={<AboutUs />} />
           <Route exact path="/rating" element={<Rating />} />
           <Route exact path="/support" element={<Support />} />
+          <Route exact path="/member" element={<Member />} />
           <Route
             exact
             path="/terms-and-conditions"
