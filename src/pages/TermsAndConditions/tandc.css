@@ -1,0 +1,13 @@
+.banner {
+  margin-left: 180px;
+}
+@media (max-width: 768px) {
+  .banner {
+    margin-left: 20px;
+    width: 100%;
+  }
+  .content {
+    margin-left: -300px;
+    width: 100%;
+  }
+}
