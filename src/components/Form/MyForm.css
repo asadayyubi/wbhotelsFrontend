@@ -67,4 +67,9 @@
     }
   }
   
+  @media (max-width: 668px) {
+    .form-container{
+      width: 100%;
+    }
+  }
   
