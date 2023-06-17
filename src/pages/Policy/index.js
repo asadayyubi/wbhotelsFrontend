@@ -208,70 +208,7 @@ const Policy = () => {
               </div>
               <div className="policy__section"></div>
             </div>
-            <div>
-              <div>
-                <div className="policy__subHeading">
-                  Reservations, Amendent and Cancellation
-                </div>
-                <p>
-                  <div>
-                    <div className="font-style">
-                      All reservations are subject to availability. Reservations
-                      made on this site are considered conditional until a
-                      confirmation number is given to the guest to substantiate
-                      the reservations by email or fax. The hotel may, from time
-                      to time, communicate with the guests, to re-confirm the
-                      reservations and to prevent any simulated bookings.
-                    </div>
-                  </div>
-                </p>
-                <p>
-                  <div className="font-style">
-                    <div>
-                      Should the guests wish to amend any reservations,
-                      modifications may be made on the website at the earliest
-                      convenience. The Hotel will not be liable should it fail
-                      to provide its products and services due to
-                      unavailability.
-                    </div>
-                  </div>
-                </p>
-                <p>
-                  <div>
-                    <div className="font-style">
-                      In the event that the hotel, for reasons beyond its
-                      control, need to reject or change a confirmed reservations
-                      it will use all reasonable attempt to facilitate the
-                      circumstances however if no alternative is provided to the
-                      Client, the hotel will return any deposit made and
-                      considered it cancelled. This is the limit of the hotel's
-                      liability.
-                    </div>
-                  </div>
-                </p>
-                <p>
-                  <div>
-                    <div className="font-style">
-                      The hotel reserves the right to impose a cancellation fee
-                      of per room per night in the event of a late cancellation
-                      notice or a no-show at the hotel.
-                    </div>
-                  </div>
-                </p>
-                <p>
-                  <div>
-                    <div className="font-style">
-                      Royal Orchid Hotels does not guarantee acknowledgement of
-                      reservations or transactions made on this site arising
-                      from unforeseen circumstances, omissions or errors that
-                      may sometimes occur
-                    </div>
-                  </div>
-                </p>
-              </div>
-              <div className="policy__section"></div>
-            </div>
-            //
+
             <div>
               <div>
                 <h1 className="policy__subHeading">

@@ -105,6 +105,7 @@
   
   .policy__container {
     margin-top: 100px;
+    text-align: justify;
   }
   
   @media only screen and (max-width: 700px) {

@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Optima, sans-serif;
+  }
+ 
+ .panel-heading {
+    background: #6f6f6f;
+    background: linear-gradient(to top,#424040 0,#0f0d0d 100%);
+    color: #fff!important;
+    font-size: 42px;
+    font-weight: 600;
+    border-radius: 0;
+    padding: 6px 40px;
+    line-height: 38px;
+    min-height: 50px;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+   
+}
+
+/* div1 end here  */
+
+ .panel-body {
+    background-color: #f8f8f8;
+   width: 60%;
+   margin: auto;
+    padding: 20px 40px!important;
+    margin-bottom: 250px;
+}
+
+.element-wrapper {
+    border: 1px solid #bbc7cc;
+    padding: 7px 0 8px!important;
+    margin: auto;
+    margin-bottom: 8px;
+    background-color: #fff;
+    min-height: 45px!important;
+    border-radius: 4px;
+    width: 60%;
+   
+
+}
+
+.element-input {
+    font-size: 18px;
+    border: none;
+    height: auto;
+    margin-top: 5px;
+      padding: 8px;
+}
+.element-input:focus{
+    outline: none;
+}
+
+.form-control {
+    width: 90%;
+    margin: auto;
+}
+
+ .element-wrapper:hover {
+    border: 1px solid #2979ff;
+   
+}
+.form-group{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+   
+}
+
+ .control-label {
+    padding-top: 7px;
+    font-size: 15px;
+    margin-top: 60px;
+    text-align: left;
+    padding-left: 50px;
+    width: 200px;
+}
+.control-label-email{
+    padding-right: 30px;
+}
+
+ 
+
+.btn {
+    font-size: 1em;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
+    text-decoration: none;
+    background-image: none;
+    padding: 5px 10px;
+    line-height: normal!important;
+    background-color: #01509d;
+    border: 1px solid #01509d;
+    color: #fff!important;
+    border-radius: 0;
+}
+
+.submit-btn {
+    background-color: #01509d;
+    font-size: 20px!important;
+    width: 35%;
+    margin: auto;
+    height: 40px;
+    padding: 9px 10px 9px!important;
+    border-radius: 4px!important;
+    margin-left: 300px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+    .panel-heading {
+      
+        font-size: 32px;
+        font-weight: 300;
+        border-radius: 0;
+        padding: 6px 40px;
+        line-height: 32px;
+        min-height: 50px;
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+       
+    }
+
+    .panel-body {
+        background-color: #f8f8f8;
+       width: 90%;
+       margin: auto;
+       
+        padding: 0px;
+        padding-top: 25px;
+        margin-bottom: 250px;
+    }
+
+    .form-group{
+        flex-direction: column;
+       
+    }
+
+    .element-wrapper {
+        width: 100%;
+    }
+
+    .element-input {
+        font-size: 12px;
+      
+    }
+
+    .control-label {
+      
+        padding-left: 0px;
+        padding-bottom: 20px;
+    }
+    .control-label-email{
+        padding-right: 0px;
+    }
+
+
+    .submit-btn {
+        width: 150px;
+        margin-left: 0px;
+    }
+}
