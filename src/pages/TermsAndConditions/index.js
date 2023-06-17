@@ -1,4 +1,5 @@
 import tcbanner from '../../media/images/tandcOriginal.jpg'
+import "./tandc.css"
 
 const TermsAndConditions = () => {
     return (
@@ -19,14 +20,15 @@ const TermsAndConditions = () => {
         </div> */}
         <div style={{backgroundColor:"#f5f5f5", marginTop:"-50px", marginBottom:"-50px" }}>
         <div style={{width: "90%", margin: "50px auto", minHeight: "100vh", display: "flex", alignItems: "center", flexDirection: "column"}}>
-        <div>
+        <div className='banner'>
             <img
               src={tcbanner}
               alt="T&C Banner"
-              style={{width: "80%",marginLeft:"150px", marginTop:"80px"}}
+              style={{width:"90%", marginTop:"80px"}}
             /> 
         </div> 
-        <div style={{marginTop:"5px"}}>
+        <div className='content'
+        style={{marginTop:"5px"}}>
             {/* <p style={{fontWeight: "bold", fontSize: "2.5rem", textAlign: "center", marginTop: "1rem", fontFamily:"sans-serif"}}>About Us</p> */}
             <p style={{marginTop: "1.8rem", fontSize: "1.8rem", lineHeight: "1.4", fontFamily:"sans-serif", textAlign:"justify", marginBottom: "2rem", width:"75%", marginLeft:"180px"}}>
                 <ul>

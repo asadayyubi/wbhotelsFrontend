@@ -60,12 +60,15 @@ const AboutUs = () => {
         style={{
           textAlign: "center",
           marginBottom: "2rem",
-          marginTop: "-4rem",
+          marginTop: "2rem",
         }}
       >
         Our Team
       </h1>
+
+    
       <div className="card-container-about-us">
+
         {cardData.map((item, i) => (
           <Teamcard
             key={i}
