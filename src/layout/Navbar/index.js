@@ -59,12 +59,12 @@ const Navbar = () => {
             <div className="icon">
               <EmojiPeopleIcon />
             </div>
-            <div className="details">
+            <div className="details" onClick={() => navigate("/member") }>
               <h3>Become a Member</h3>
               <p>Additional 10% off on stays</p>
             </div>
           </div>
-          <div className="card">
+          <div className="card" >
             <div className="icon">
               <BusinessCenterOutlinedIcon />
             </div>

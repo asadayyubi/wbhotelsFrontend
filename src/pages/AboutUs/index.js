@@ -65,8 +65,10 @@ const AboutUs = () => {
       >
         Our Team
       </h1>
-      <div className="card-container-about-us"
-      >
+
+    
+      <div className="card-container-about-us">
+
         {cardData.map((item, i) => (
           <Teamcard
             key={i}
