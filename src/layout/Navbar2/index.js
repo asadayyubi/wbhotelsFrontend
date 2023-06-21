@@ -65,8 +65,14 @@ const Navbar2 = () => {
               <h3>Login / Signup</h3>
             </div>
         }
+
+        
       </div>
+
+      
     </div>
+
+    
   );
 };
 

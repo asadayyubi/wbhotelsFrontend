@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Optima, sans-serif;
+  }
+
+.main-login-trvl{
+    width: 85%;
+    margin: auto;
+    margin-top: 130px;
+}
+.login-sign-main-p{
+    /* border-bottom: 5xp solid rgb(191, 67, 67); */
+    /* border-bottom: #301a1a; */
+}
+
+.login-sign-p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.both-btn-trvl-crpt{
+    display: flex;
+   justify-content: space-between;
+
+}
+
+.btn-travel-agent{
+    color: black;
+    background-color: rgba(0, 0, 0, 0.12);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    padding: 12px;
+    
+}
+
+.btn-travel-agent:hover{
+    color: #fff;
+    background-color: #0a7ced;
+}
+
+
+@media screen and (max-width: 768px) {
+    .main-login-trvl{
+        width: 65%;
+        margin: auto;
+        margin-top: 60px;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .main-login-trvl{
+        width: 95%;
+        margin: auto;
+        margin-top: 36px;
+    }
+
+    .btn-travel-agent{
+        font-size: 14px;
+    }
+}
