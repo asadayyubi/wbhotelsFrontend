@@ -20,6 +20,15 @@ const Navbar = () => {
   function onSeeAllClick() {
     navigate("/citylist");
   }
+  function openDialer() {
+    const phoneNumber = '08048036907';
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      window.location.href = `tel:${phoneNumber}`;
+    } else {
+      alert(`Please dial ${phoneNumber} on your phone.`);
+    }
+  }
+  
 
   // author:asad:02/06/2023 start
 
@@ -47,6 +56,7 @@ const Navbar = () => {
     });
     setFilteredCity(filteredData);
   };
+
   // author:asad:02/06/2023 end
   return (
     <div className="navbar">
@@ -88,7 +98,11 @@ const Navbar = () => {
             </div>
             <div className="details">
               <h3>080480 36907</h3>
-              <p>Call us to book now</p>
+              <p>
+              <a href="#" onClick={openDialer}>
+                Call us to book now
+              </a>
+              </p>
             </div>
           </div>
           <div
@@ -141,12 +155,12 @@ const Navbar = () => {
                     </div>
                   ))}
 
-                  <div className="menu-item all" style={{ display: "flex" }}>
+                  {/* <div className="menu-item all" style={{ display: "flex" }}>
                     <p>SEE ALL</p>{" "}
                     <span>
                       <ArrowForwardOutlinedIcon />
                     </span>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
@@ -159,7 +173,7 @@ const Navbar = () => {
           style={{ display: "flex" }}
           onClick={() => onSeeAllClick()}
         >
-          <span style={{ fontSize: "14px" }}>All Cities</span>
+        <span style={{ fontSize: "14px" }}>All Cities</span>
         </div>
       </div>
     </div>

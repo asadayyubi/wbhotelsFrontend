@@ -34,9 +34,9 @@ a:hover {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 40px;
   grid-row-gap: 30px;
-  margin-bottom: 4rem;
   width: 80%;
   margin: auto;
+  margin-bottom: 4rem;
 }
 
 @media screen and (max-width: 768px) {

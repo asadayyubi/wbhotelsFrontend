@@ -34,6 +34,12 @@ export const cardData = [
     image: prashant,
   },
   {
+    name: "Hoshang Varaiva",
+    designation: "Chief Tehnology Officer",
+    linkedin: "https://www.linkedin.com/in/hoshang-variava-9aa9341a/",
+    image: hoshang,
+  },
+  {
     name: "Asad Ayyubi",
     designation: "Full Stack Developer",
     linkedin: "https://www.linkedin.com/in/asad-ayyubi-54b46a183/",
@@ -52,10 +58,5 @@ export const cardData = [
     image: shweta,
   },
 
-  {
-    name: "Hoshang Varaiva",
-    designation: "Chief Tehnology Officer",
-    linkedin: "https://www.linkedin.com/in/hoshang-variava-9aa9341a/",
-    image: hoshang,
-  },
+ 
 ];
