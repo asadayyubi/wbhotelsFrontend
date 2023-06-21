@@ -143,7 +143,6 @@ const Router = () => {
           <Route exact path="/rating" element={<Rating />} />
           <Route exact path="/support" element={<Support />} />
           <Route exact path="/member" element={<Member />} />
-
           <Route
             exact
             path="/terms-and-conditions"
