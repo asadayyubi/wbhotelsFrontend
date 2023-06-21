@@ -8,7 +8,22 @@
     position: sticky;
     top: 7rem;
     align-self: flex-start;
-   
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(203, 213, 225, 0.5);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(203, 213, 225, 0.8);
+    }
 
     .header {
       display: flex;
@@ -20,7 +35,7 @@
       .btn {
         padding: 1rem 2rem;
         border-radius: 20px;
-        background-color: rgba($color-primary-1, 0.5);
+        background-color: #0d9488;
         user-select: none;
         transition: $transition-1;
         cursor: pointer;
@@ -62,6 +77,7 @@
       }
     }
   }
+
   .right {
     flex: 4;
     padding: 3rem;
@@ -116,6 +132,12 @@
       }
     }
     @import "./uis/SearchResultsCard/card";
+  }
+}
+@media only screen and (min-width: 824px) {
+  .filter-left {
+    height: 100vh; /* Adjust the height as needed */
+    overflow-y: auto;
   }
 }
 @media only screen and (max-width: 524px) {

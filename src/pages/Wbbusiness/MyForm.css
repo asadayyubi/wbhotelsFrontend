@@ -1,5 +1,15 @@
 /* MyForm.css */
 
+.wb-business-heading h3{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  line-height:32px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+
 .form-card {
     width: 40%;
     margin: 0 auto;

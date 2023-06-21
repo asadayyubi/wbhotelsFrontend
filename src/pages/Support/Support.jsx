@@ -54,18 +54,9 @@ const Support = () => {
           {" "}
           We are here to help!{" "}
         </p>
-        <div style={{ display: "flex", gap: "4.5rem" }}>
-          <div
-            style={{
-              marginTop: "3rem",
-              marginLeft: "3rem",
-              display: "flex",
-              boxShadow:
-                "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
-              width: "350px",
-              height: "150px",
-              alignItems: "center",
-            }}
+        <div className="logo"
+        style={{ display: "flex", gap: "4.5rem" }}>
+          <div className="logo1"
           >
             <div>
               <img
@@ -84,6 +75,7 @@ const Support = () => {
               />
             </div>
             <div>
+              <div className="text1">
               <p
                 style={{
                   flex: "2",
@@ -94,6 +86,7 @@ const Support = () => {
               >
                 Text Us
               </p>
+              </div>
               <p
                 style={{
                   marginLeft: "1.8rem",
@@ -106,17 +99,7 @@ const Support = () => {
               </p>
             </div>
           </div>
-          <div
-            style={{
-              marginTop: "3rem",
-              marginLeft: "2rem",
-              display: "flex",
-              boxShadow:
-                "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
-              width: "350px",
-              height: "150px",
-              alignItems: "center",
-            }}
+          <div className="logo2"
           >
             <div>
               <img
@@ -134,6 +117,7 @@ const Support = () => {
               />
             </div>
             <div>
+              <div className="text2">
               <p
                 style={{
                   flex: "2",
@@ -144,6 +128,7 @@ const Support = () => {
               >
                 Call Us
               </p>
+              </div>
               <p
                 style={{
                   marginLeft: "1.8rem",
@@ -156,17 +141,7 @@ const Support = () => {
               </p>
             </div>
           </div>
-          <div
-            style={{
-              marginTop: "3rem",
-              marginLeft: "2rem",
-              display: "flex",
-              boxShadow:
-                "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
-              width: "350px",
-              height: "150px",
-              alignItems: "center",
-            }}
+          <div className="logo3"
           >
             <div>
               <img
@@ -184,6 +159,7 @@ const Support = () => {
               />
             </div>
             <div>
+              <div className="text3">
               <p
                 style={{
                   flex: "2",
@@ -194,6 +170,7 @@ const Support = () => {
               >
                 Reach Out to the Property
               </p>
+              </div>
               <p
                 style={{
                   marginLeft: "1.8rem",
@@ -327,19 +304,20 @@ const Support = () => {
         >
           Frequently asked questions
         </h1>  
-        <div
+        <div className="ques1"
             style={{
                 marginLeft: "0rem",
                 display: "flex",
                 boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                width: "850px",
-                height: "120px",
+                // width: "850px",
+                // height: "120px",
                 alignItems: "center",
                 marginTop:"2rem"
             }} 
     >
          <div>
-            <div style={{display: "grid", gridTemplateColumns: "1fr auto"}}>
+            <div 
+            style={{display: "grid", gridTemplateColumns: "1fr auto"}}>
             <div style={{gridColumn: "1"}}>
             <p
               style={{
@@ -354,15 +332,16 @@ const Support = () => {
                 Is it possible to cancel my booking? 
             </p>
             </div>
-            <div style={{gridColumn: "2"}}>
-            
+            <div className="arr1"
+            style={{gridColumn: "2"}}>
+            <div className="arr1">
             <ArrowDropDownIcon onClick={toggleStyle}
                  style={{
                     fontSize: "40px",
-                    marginLeft: "465px",
+                    // marginLeft: "447px",
                  }}
             />
-           
+           </div>
             </div>       
             </div>
             <div className={isStyleVisible ? 'mystyle' : 'display-none'}>
@@ -379,13 +358,13 @@ const Support = () => {
             </div>  
           </div>
     </div>    
-        <div
+        <div className="ques2"
             style={{
                 marginLeft: "0rem",
                 display: "flex",
                 boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                width: "850px",
-                height: "120px",
+                // width: "850px",
+                // height: "120px",
                 alignItems: "center",
             }} 
     >
@@ -395,7 +374,6 @@ const Support = () => {
             <p
               style={{
                 fontWeight: "bold",
-                // marginTop: "-0.1rem",
                 marginLeft: "2rem",
                 fontSize: "17px",
                 marginTop: "9px"
@@ -406,12 +384,14 @@ const Support = () => {
             </p>
             </div>
             <div style={{gridColumn: "2"}}>
+            <div className="arr2">
             <ArrowDropDownIcon onClick={toggleStyle1}
                  style={{
                     fontSize: "40px",
-                    marginLeft: "100px",
+                    marginLeft: "102px",
                  }}
             />
+            </div>
             </div>       
             </div>
             <div className={isStyleVisible1 ? 'mystyle' : 'display-none'}>
@@ -427,14 +407,14 @@ const Support = () => {
             </div> 
           </div>
     </div> 
-    <div 
+    <div className="ques3"
             style={{
                 marginLeft: "0rem",
                 display: "flex",
                 boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
                 alignItems: "center",
-                width: "850px",
-                height: "120px",
+                // width: "850px",
+                // height: "120px",
 
             }} 
     >
@@ -444,7 +424,6 @@ const Support = () => {
             <p
               style={{
                 fontWeight: "bold",
-                // marginTop: "-0.1rem",
                 marginLeft: "2rem",
                 fontSize: "17px",
                 marginTop: "9px"
@@ -456,14 +435,14 @@ const Support = () => {
             </p>
             </div>
             <div style={{gridColumn: "2"}}>
-            
+            <div className="arr3">
             <ArrowDropDownIcon onClick={toggleStyle5}
                  style={{
                     fontSize: "40px",
-                    marginLeft: "70px",
+                    marginLeft: "69px",
                  }}
             />
-           
+            </div>
             </div>       
             </div>
             <div className={isStyleVisible5 ? 'mystyle' : 'display-none'}>
@@ -480,13 +459,13 @@ const Support = () => {
             </div>  
           </div>
     </div>    
-        <div
+        <div className="ques4"
             style={{
                 marginLeft: "0rem",
                 display: "flex",
                 boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                width: "850px",
-                height: "120px",
+                // width: "850px",
+                // height: "120px",
                 alignItems: "center",
             }} 
     >
@@ -507,12 +486,14 @@ const Support = () => {
             </p>
             </div>
             <div style={{gridColumn: "2"}}>
+            <div className="arr4">
             <ArrowDropDownIcon onClick={toggleStyle4}
                  style={{
                     fontSize: "40px",
-                    marginLeft: "270px",
+                    marginLeft: "273px",
                  }}
             />
+            </div>
             </div>       
             </div>
             <div className={isStyleVisible4 ? 'mystyle' : 'display-none'}>
@@ -528,13 +509,13 @@ const Support = () => {
             </div> 
           </div>
     </div> 
-    <div
+    <div className="ques5"
             style={{
                 marginLeft: "0rem",
                 display: "flex",
                 boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                width: "850px",
-                height: "120px",
+                // width: "850px",
+                // height: "120px",
                 alignItems: "center",
             }} 
     >
@@ -555,14 +536,14 @@ const Support = () => {
             </p>
             </div>
             <div style={{gridColumn: "2"}}>
-            
+            <div className="arr5">
             <ArrowDropDownIcon onClick={toggleStyle2}
                  style={{
                     fontSize: "40px",
                     marginLeft: "355px",
                  }}
             />
-           
+            </div>
             </div>       
             </div>
             <div className={isStyleVisible2 ? 'mystyle' : 'display-none'}>
@@ -579,13 +560,13 @@ const Support = () => {
             </div>  
           </div>
     </div>    
-        <div
+        <div className="ques6"
             style={{
                 marginLeft: "0rem",
                 display: "flex",
                 boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px",
-                width: "850px",
-                height: "120px",
+                // width: "850px",
+                // height: "120px",
                 alignItems: "center",
             }} 
     >
@@ -606,12 +587,14 @@ const Support = () => {
             </p>
             </div>
             <div style={{gridColumn: "2"}}>
+            <div className="arr6">
             <ArrowDropDownIcon onClick={toggleStyle3}
                  style={{
                     fontSize: "40px",
-                    marginLeft: "195px",
+                    marginLeft: "200px",
                  }}
             />
+            </div>
             </div>       
             </div>
             <div className={isStyleVisible3 ? 'mystyle' : 'display-none'}>
