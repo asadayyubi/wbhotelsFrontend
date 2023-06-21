@@ -22,6 +22,31 @@ import axios from "axios";
 import { API_GET_HOTELS_BY_ID } from "../../apis/index";
 import LoaderPrimary from "../../layout/Loader/LoaderPrimary";
 import { useBookingData } from "../../Contexts/BookingContext";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import EmailIcon from '@mui/icons-material/Email';
+import './dabba.css'
+
+const handleWhatsAppShare = () => {
+  const currentUrl = encodeURIComponent(window.location.href);
+  const message = encodeURIComponent(`Check out this page: ${currentUrl}`);
+  const url = `https://api.whatsapp.com/send?text=${message}`;
+  window.open(url, '_blank');
+};
+
+const handleFacebookShare = () => {
+  const currentUrl = encodeURIComponent(window.location.href);
+  const url = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+  window.open(url, '_blank');
+};
+
+const handleEmailShare = () => {
+  const currentUrl = encodeURIComponent(window.location.href);
+  const subject = encodeURIComponent('Check out this page');
+  const body = encodeURIComponent(`I thought you might be interested in this page: ${currentUrl}`);
+  const url = `mailto:?subject=${subject}&body=${body}`;
+  window.location.href = url;
+};
 
 const HotelPage = () => {
   const location = useLocation();
@@ -29,7 +54,7 @@ const HotelPage = () => {
     useContext(LoginContext);
   const { setPriceAndRoomDetails } = useBookingData();
   // console.log("..location...", location?.state?.data);
-
+const [showdabba, setShowdabba] = useState(false);
   useEffect(() => {
     setHotelDetails(undefined);
     const queryParams = new URLSearchParams(window.location.search);
@@ -251,9 +276,41 @@ const HotelPage = () => {
       <div className="hotel-page">
         <CarouselPrimary carouselId="123">
           <>
-            <div className="carousel-btn share">
+            <div className="carousel-btn share" onClick={() => setShowdabba(!showdabba)}>
               <ShareIcon />
               <p>Share</p>
+            </div>
+            <div className={`dabba ${showdabba ? "hide-dabba" : "display-dabba"}`}>
+              <div style={{display:"flex"}}>
+                <p>
+                <WhatsAppIcon onClick={handleWhatsAppShare}
+                style={{fontSize:"40px", paddingTop:"8px", paddingLeft:"10px"}}
+                /> 
+                </p>
+                <div style={{fontSize:"16px", paddingTop:"14px", paddingLeft:"10px"}}>
+                WhatsApp
+                </div>
+                </div>
+                <div style={{display:"flex"}}>
+                <p>
+                <FacebookIcon onClick={handleFacebookShare}
+                style={{fontSize:"40px", paddingTop:"8px", paddingLeft:"10px"}}
+                />
+                </p>
+                <div style={{fontSize:"16px", paddingTop:"14px", paddingLeft:"10px"}}>
+                Facebook
+                </div>
+                </div>
+                <div style={{display:"flex"}}>
+                <p>  
+                <EmailIcon onClick={handleEmailShare}
+                style={{fontSize:"40px", paddingTop:"8px", paddingLeft:"10px"}}
+                />
+                </p>
+                <div style={{fontSize:"16px", paddingTop:"14px", paddingLeft:"10px"}}>
+                E-mail
+                </div>
+                </div>
             </div>
             {hotel_data?.hotel_gallery.map((hotel) => {
               return (
