@@ -29,7 +29,7 @@ import './dabba.css'
 
 const handleWhatsAppShare = () => {
   const currentUrl = encodeURIComponent(window.location.href);
-  const message = encodeURIComponent(`Check out this page: ${currentUrl}`);
+  const message = `Check out this page: ${currentUrl}`;
   const url = `https://api.whatsapp.com/send?text=${message}`;
   window.open(url, '_blank');
 };
@@ -42,8 +42,8 @@ const handleFacebookShare = () => {
 
 const handleEmailShare = () => {
   const currentUrl = encodeURIComponent(window.location.href);
-  const subject = encodeURIComponent('Check out this page');
-  const body = encodeURIComponent(`I thought you might be interested in this page: ${currentUrl}`);
+  const subject = 'Check out this page';
+  const body = `I thought you might be interested in this page: ${currentUrl}`;
   const url = `mailto:?subject=${subject}&body=${body}`;
   window.location.href = url;
 };
