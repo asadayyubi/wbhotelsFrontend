@@ -43,11 +43,11 @@ import "react-whatsapp-chat-widget/index.css";
 import companyLogo from "../media/images/logowithtext.png"
 import { Propertylisting } from "../pages/PropertyListing/Propertylisting";
 import Businesswb from "../pages/Wbbusiness/Businesswb";
-import Support from "../pages/Support/Support";
 import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
 import Cancellation from "../pages/CancellationPage/Cancellation";
 import Member from "../pages/Member/Member";
 import SuperAgent from "../pages/SuperAgent/SuperAgent";
+import Support from "../pages/Support/Support";
 
 
 const Router = () => {

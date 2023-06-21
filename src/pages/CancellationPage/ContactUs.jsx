@@ -21,7 +21,7 @@ const ContactUs = () => {
                     <div className='first' style={{ flex: "0 0 48%", backgroundColor: "#DDDDDD", padding: "1rem", borderRadius: "3px", marginTop: "-10%"}}>
                     {/* Contact Box 1 */}
                     <h3 style={{ marginBottom: "1rem", color: "black" }}>Address </h3>
-                    <p style={{ color: "black" }}>WB Hotels & Resorts,  A007, Kanakia Boomerang, Chandivali, Powai, Mumbai  -400072,  <br/>Central Reservations Number:  80480 36907 <br/>E-Mail: booking@wbhotels.in <br/> Website: www.wbhotels.in.</p>
+                    <p style={{ color: "black", fontSize:"14px", lineHeight: "19px"}}>WB Hotels & Resorts,  A007, Kanakia Boomerang, Chandivali, Powai, Mumbai  - 400072,  <br/>Central Reservations Number:  80480 36907 <br/>E-Mail: booking@wbhotels.in <br/> Website: www.wbhotels.in.</p>
                   </div>
                   <div className='second' style={{ flex: "0 0 48%", backgroundColor: "#DDDDDD", padding: "1rem", borderRadius: "3px",marginTop: "-10%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                     {/* Contact Box 2 */}
