@@ -25,7 +25,7 @@ const Navbar = () => {
 
   useEffect(() => {
     getFilteredCity(cityMenu);
-  },[])
+  }, []);
   const getFilteredCity = (cityMenu) => {
     const filteredData = cityMenu.filter(({ city_name }) => {
       if (
@@ -59,21 +59,21 @@ const Navbar = () => {
             <div className="icon">
               <EmojiPeopleIcon />
             </div>
-            <div className="details" onClick={() => navigate("/member") }>
+            <div className="details" onClick={() => navigate("/member")}>
               <h3>Become a Member</h3>
               <p>Additional 10% off on stays</p>
             </div>
           </div>
-          <div className="card" >
+          <div className="card">
             <div className="icon">
               <BusinessCenterOutlinedIcon />
             </div>
-            <div className="details" onClick={() => navigate("/business-wb") }>
+            <div className="details" onClick={() => navigate("/business-wb")}>
               <h3>WB for Business</h3>
               <p>Corporate booking solution</p>
             </div>
           </div>
-          <div className="card" onClick={() => navigate("/property-listing") }>
+          <div className="card" onClick={() => navigate("/property-listing")}>
             <div className="icon">
               <HouseOutlinedIcon />
             </div>
@@ -149,6 +149,8 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
+
+              
             );
           }
         })}

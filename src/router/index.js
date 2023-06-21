@@ -46,7 +46,8 @@ import Businesswb from "../pages/Wbbusiness/Businesswb";
 import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
 import Cancellation from "../pages/CancellationPage/Cancellation";
 import Member from "../pages/Member/Member";
-import Support from "../pages/Support/Support"
+import SuperAgent from "../pages/SuperAgent/SuperAgent";
+import Support from "../pages/Support/Support";
 
 
 const Router = () => {
@@ -143,6 +144,7 @@ const Router = () => {
           <Route exact path="/rating" element={<Rating />} />
           <Route exact path="/support" element={<Support />} />
           <Route exact path="/member" element={<Member />} />
+          <Route exact path="/superAgent" element={<SuperAgent />}/>
           <Route
             exact
             path="/terms-and-conditions"
