@@ -1,0 +1,25 @@
+.title1{
+    text-align: center;
+    font-size: 48px;
+    color: black;
+    font-weight:bolder;
+}
+.img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8{
+    display: flex;
+    justify-content: center;
+}
+
+.award6{
+    width: 75%;
+}
+.award2, .award4, .award7, .award8{
+    width: 75%;
+}
+.award3, .award5, .award1{
+    width: 75%;
+}
+@media screen and (max-width:560px){
+    .title1{
+        font-size: 12px;
+    }
+}
