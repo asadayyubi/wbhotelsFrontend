@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3rem 5rem;
+    padding: 1rem 3rem;
     border-bottom: 1px solid rgba($color-grey-1, 0.5);
 
     .left {
@@ -51,7 +51,8 @@
   }
 
   .sec2 {
-    padding: 3rem 5rem;
+    padding: 1.5rem 3rem;
+    margin-bottom: -20px;
     border-bottom: 1px solid rgba($color-grey-1, 0.5);
 
     h3 {
