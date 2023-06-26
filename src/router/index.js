@@ -89,7 +89,7 @@ const Router = () => {
         <Navbar2 />
         {/* author:asad:03-06-23: start */}
         <WhatsAppWidget
-          phoneNo="918591975256"
+          phoneNo="918591975258"
           position="right"
           iconSize="50"
           iconColor="white"
