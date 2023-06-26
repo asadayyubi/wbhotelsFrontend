@@ -28,7 +28,7 @@ const LoginPage = () => {
   const { setUserProfileDetails, setIsLoggedIn } = useContext(LoginContext);
   const location = useLocation();
   var redirectPage = undefined;
-  
+
   if (location?.state?.data) {
     redirectPage = location?.state?.data?.redirectPage;
   }
@@ -89,7 +89,7 @@ const LoginPage = () => {
       <Cover>
         <MainTop>
           <br />
-          <Typography style={{ marginLeft: "8%", marginTop: "9rem" }}>
+          <Typography style={{ marginLeft: "12%", marginTop: "13rem" }}>
             {" "}
             WB HOTELS Hotels across 200 cities, 2 countries
           </Typography>
@@ -97,7 +97,7 @@ const LoginPage = () => {
         <MainBox>
           <MainLeft>
             <LeftInner>
-              <Heading1>There's a smarter way to WB HOTELS around</Heading1>
+              <Heading1>WB Hotels your accommodations buddy</Heading1>
               <br />
               <Typography
                 style={{
@@ -127,7 +127,11 @@ const LoginPage = () => {
                     <>
                       <LoginInput>
                         <Typography
-                          style={{ fontWeight: "bold", marginBottom: "1rem" }}
+                          style={{
+                            fontWeight: "bold",
+                            marginBottom: "1rem",
+                           
+                          }}
                         >
                           {content}
                         </Typography>
@@ -155,7 +159,11 @@ const LoginPage = () => {
                     <>
                       <LoginInput>
                         <Typography
-                          style={{ fontWeight: "bold", marginBottom: "1rem" }}
+                          style={{
+                            fontWeight: "bold",
+                            marginBottom: "1rem",
+                            fontSize: "18px",
+                          }}
                         >
                           {content}
                         </Typography>
@@ -186,9 +194,15 @@ const LoginPage = () => {
                     </div>
                     <div className="both-btn-trvl-crpt">
                       <div className="btn-travel-main">
-                        <button className="btn-travel-agent " onClick={()=> navigate("/superAgent")}>
-                          Travel Agent
-                        </button>
+                        <a href="https://travelagent.wbhotels.in/">
+                          {" "}
+                          <button
+                            className="btn-travel-agent "
+                            // onClick={() => navigate("/superAgent")}
+                          >
+                            Travel Agent
+                          </button>
+                        </a>
                       </div>
                       <div>
                         <button className="btn-travel-agent">Corporate</button>
