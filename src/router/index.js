@@ -47,7 +47,7 @@ import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
 import Cancellation from "../pages/CancellationPage/Cancellation";
 import Member from "../pages/Member/Member";
 import Support from "../pages/Support/Support";
-
+import Award from "../pages/Award/Award";
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -143,6 +143,8 @@ const Router = () => {
           <Route exact path="/rating" element={<Rating />} />
           <Route exact path="/support" element={<Support />} />
           <Route exact path="/member" element={<Member />} />
+      
+          <Route exact path="/award" element={<Award />}/>
           <Route
             exact
             path="/terms-and-conditions"
