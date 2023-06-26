@@ -33,9 +33,9 @@ const Navbar = () => {
                 </div>
               ))}
 
-              <div className="menu-item all" style={{display: "flex"}}>
+              {/* <div className="menu-item all" style={{display: "flex"}}>
                 <p>SEE ALL</p> <span><ArrowForwardOutlinedIcon /></span>                
-              </div>
+              </div> */}
             </div>
             
           </div>

@@ -1,195 +1,220 @@
-import { CardContent, Grid, TextField } from "@material-ui/core";
-import Card from "@mui/material/Card";
-import Typography from "@mui/material/Typography";
 import React, { useState } from "react";
-import ButtonPrimary from "../../components/button/ButtonPrimary";
-import { spacing } from "@mui/system";
-import BasicModal from "../../components/Modal/Modal";
-import axios from "axios";
-import { API_INSERT_LIST_PROPERTY_DATA } from "../../apis";
+import { Field, Form, ErrorMessage, withFormik } from "formik";
+import * as Yup from "yup";
+import { TextField, Button, Modal, Card, CardContent } from "@mui/material";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import "./MyForm.css";
+import { useNavigate } from "react-router-dom";
 
-const initState = {
-  email: "",
-  company_name: "",
-  company_type: "",
-  address: "",
-  number: "",
-  website: "",
-  inquired_for:"for_bussiness"
-};
+const validationSchema = Yup.object().shape({
+  companyName: Yup.string().required("Company Name is required"),
+  typeOfCompany: Yup.string().required("Type of Company is required"),
+  address: Yup.string().required("Address is required"),
+  // .positive("Number of Rooms must be positive"),
+  website: Yup.string().required("Website Name is required"),
+  mobile: Yup.string()
+    .required("Mobile Number is required")
+    .matches(/^\d{10}$/, "Mobile Number must be 10 digits"),
+  email: Yup.string().email("Invalid email").required("Email is required"),
+});
 
+const MyForm = ({
+  values,
+  errors,
+  touched,
+  handleChange,
+  handleBlur,
+  isSubmitting,
+  resetForm, // Added resetForm from Formik
+  insertData,
+}) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-
-const insertData = async (params = {}) => {
-  try {
-    console.log(params,"calling api");
-    const res = await axios.post(API_INSERT_LIST_PROPERTY_DATA, params);
-    console.log(res);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-const Businesswb = () => {
-  const [inputData, setInputData] = useState(initState);
-  const [showModal, setShowModal] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setInputData({
-      ...inputData,
-      [name]: value,
-    });
+  const handleModalClose = () => {
+    setModalOpen(false);
+    navigate("/");
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefaut();
-    console.log("button clicked");
-    console.log(inputData);
-    insertData(inputData);
-    setInputData(initState);
-    
-    setShowModal(true);
+    e.preventDefault();
+    validationSchema
+      .validate(values)
+      .then(() => {
+        setModalOpen(true);
+        console.log(values);
+        insertData(values);
+        resetForm(); // Reset the form after successful submission
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
-
-  const { email, company_name, address, number, company_type, website } =
-    inputData;
 
   return (
-    <div>
-      <Typography
-        gutterBottom
-        variant="h2"
-        align="center"
-        sx={{
-          paddingTop: 2,
-          paddingBottom: 2,
-          marginTop: 2,
-          fontSize: 25,
-          fontWeight: 600,
-        }}
-      >
-        WB hotels & Resorts. <br />
-        Please enter your property details
-      </Typography>
+    <>
+      <div className="wb-business-heading">
+        <h3>WB hotels & Resorts. <br></br> Please enter your property details</h3>
+      </div>
 
-      <Card
-        sx={{ maxWidth: 600, padding: 2 }}
-        align="center"
-        style={{ textAlign: "center", margin: "auto", marginBottom: 4 }}
-      >
-        <CardContent>
-          <Grid container spacing={1}>
-            <Grid xs={12} item>
-              <TextField
-                label="Company name"
-                placeholder="Please enter your Company name"
+      <Form onSubmit={handleSubmit}>
+        <Card className="form-card form-container">
+          <CardContent>
+            <div className="form-field input-field">
+              <Field
+                as={TextField}
+                id="companyName"
+                name="companyName"
+                label="Company Name"
+                value={values.companyName}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.companyName && !!errors.companyName}
+                helperText={touched.companyName && errors.companyName}
                 fullWidth
-                variant="outlined"
-                required
-                inputProps={{ style: { fontSize: 25 } }}
-                InputProps={{ sx: { height: 80 } }}
-                InputLabelProps={{ style: { fontSize: 12 } }}
-                name="company_name"
-                onChange={handleInputChange}
-                value={company_name}
-              ></TextField>
-            </Grid>
-            <Grid xs={12} item>
-              <TextField
-                label="Types of company"
-                placeholder="Please enter your types of company"
+                style={{ fontSize: "16px" }}
+              />
+            </div>
+
+            <div className="form-field input-field">
+              <Field
+                as={TextField}
+                id="typeOfCompany"
+                name="typeOfCompany"
+                label="Type Of Company"
+                value={values.typeOfCompany}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.typeOfCompany && !!errors.typeOfCompany}
+                helperText={touched.typeOfCompany && errors.typeOfCompany}
                 fullWidth
-                variant="outlined"
-                required
-                inputProps={{ style: { fontSize: 25 } }}
-                InputProps={{ sx: { height: 80 } }}
-                InputLabelProps={{ style: { fontSize: 12 } }}
-                name="company_type"
-                onChange={handleInputChange}
-                value={company_type}
-              ></TextField>
-            </Grid>
-            <Grid xs={12} item>
-              <TextField
-                label="Address"
-                placeholder="Please enter your address"
-                fullWidth
-                variant="outlined"
-                required
-                inputProps={{ style: { fontSize: 25 } }}
-                InputProps={{ sx: { height: 80 } }}
-                InputLabelProps={{ style: { fontSize: 12 } }}
+                style={{ fontSize: "16px" }}
+              />
+            </div>
+
+            <div className="form-field input-field">
+              <Field
+                as={TextField}
+                id="address"
                 name="address"
-                type="text"
-                value={address}
-                onChange={handleInputChange}
-              ></TextField>
-            </Grid>
-            <Grid xs={12} item>
-              <TextField
-                label="Mobile"
-                placeholder="Please enter your mobile number"
+                label="Address"
+                type="address"
+                value={values.address}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.address && !!errors.address}
+                helperText={touched.address && errors.address}
                 fullWidth
-                variant="outlined"
-                required
-                inputProps={{ style: { fontSize: 25 } }}
-                InputProps={{ sx: { height: 80 } }}
-                InputLabelProps={{ style: { fontSize: 12 } }}
-                type="number"
-                name="number"
-                value={number}
-                onChange={handleInputChange}
-              ></TextField>
-            </Grid>
-            <Grid xs={12} item>
-              <TextField
-                label="Website"
-                placeholder="Please enter your website link"
-                fullWidth
-                variant="outlined"
-                required
-                inputProps={{ style: { fontSize: 25 } }}
-                InputProps={{ sx: { height: 80 } }}
-                InputLabelProps={{ style: { fontSize: 12 } }}
-                type="text"
+                style={{ fontSize: "16px" }}
+              />
+            </div>
+
+            <div className="form-field input-field">
+              <Field
+                as={TextField}
+                id="website"
                 name="website"
-                value={website}
-                onChange={handleInputChange}
-              ></TextField>
-            </Grid>
-            <Grid xs={12} item>
-              <TextField
-                label="Email"
-                placeholder="Please enter your email"
+                label="Website"
+                type="website"
+                value={values.website}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.website && !!errors.website}
+                helperText={touched.website && errors.website}
                 fullWidth
-                variant="outlined"
-                required
-                inputProps={{ style: { fontSize: 25 } }}
-                InputProps={{ sx: { height: 80 } }}
-                InputLabelProps={{ style: { fontSize: 12 } }}
-                type="email"
+                style={{ fontSize: "16px" }}
+              />
+            </div>
+
+            <div className="form-field input-field">
+              <Field
+                as={TextField}
+                id="mobile"
+                name="mobile"
+                label="Mobile"
+                type="tel"
+                value={values.mobile}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.mobile && !!errors.mobile}
+                helperText={touched.mobile && errors.mobile}
+                fullWidth
+                style={{ fontSize: "16px" }}
+              />
+            </div>
+
+            <div className="form-field input-field">
+              <Field
+                as={TextField}
+                id="email"
                 name="email"
-                value={email}
-                onChange={handleInputChange}
-              ></TextField>
-            </Grid>
-            <Grid xs={12} item>
-              <ButtonPrimary
-                text={"Submit"}
-                onClick={(e) => handleSubmit(e)}
-              ></ButtonPrimary>
-            </Grid>
-          </Grid>
-        </CardContent>
-      </Card>
-      {showModal && <BasicModal onClose={handleCloseModal} />}
-    </div>
+                label="Email"
+                type="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={touched.email && !!errors.email}
+                helperText={touched.email && errors.email}
+                fullWidth
+                style={{ fontSize: "16px" }}
+              />
+            </div>
+
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              disabled={isSubmitting}
+              style={{
+                display: "block",
+                margin: "0 auto",
+                fontSize: "12px",
+                padding: "6px 24px",
+              }}
+            >
+              Submit
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Modal
+          open={modalOpen}
+          onClose={handleModalClose}
+          className="modal-container"
+        >
+          <Card className="modal-card">
+            <CardContent>
+              <CheckCircleIcon
+                className="tick-icon"
+                style={{ fontSize: 60, color: "green" }}
+              />
+              <h3>Thank You!</h3>
+              <p>We will get back to you within 24 hours.</p>
+            </CardContent>
+          </Card>
+        </Modal>
+      </Form>
+    </>
   );
 };
+
+const Businesswb = withFormik({
+  mapPropsToValues: ({ propertylisting }) => ({
+    companyName: "",
+    location: "",
+    address: "",
+    website: "",
+    mobile: "",
+    email: "",
+    inquired_for: propertylisting || "",
+  }),
+  handleSubmit: (values, { setSubmitting }) => {
+    setTimeout(() => {
+      alert(JSON.stringify(values, null, 2));
+      setSubmitting(false);
+    }, 500);
+  },
+  validationSchema: validationSchema,
+})(MyForm);
 
 export default Businesswb;

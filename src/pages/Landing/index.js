@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 import Section from "./Section";
 import { LoginContext } from "../../Contexts/LoginContext";
 import axios from 'axios';
-import banner from "../../media/images/BANNER_up.jpg"
+import banner from "../../media/images/BANNER-01.jpg"
 import mobBanner from "../../media/images/150-01.jpg"
 import "./banner.css"
 

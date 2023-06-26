@@ -62,6 +62,8 @@ const Footer = () => {
               <a href="/manage-booking">Manage Booking</a>
               <a href="/contact-us">Contact Us</a>
               <a href="/terms-and-conditions">Terms and conditions</a>
+              <a href="/award">Award</a>
+
               
             </div>
             <div className="col rem">
