@@ -72,7 +72,10 @@ export const Heading1 = styled(Typography)`
   font-size: 4.5rem;
   height: 45%;
   fontWeight: bold;
-  lineHeight: 1.15;
+  line-height: 42px;
+    font-size: 40px;
+    height: 23%;
+}
 
   @media (max-width: 1080px) {
     margin: auto;
@@ -106,7 +109,7 @@ export const LoginBox = styled(Box)`
 
 export const LoginTop = styled(Box)`
   width: 100%;
-  background-image: linear-gradient(to right, #ed2a25, #d2154f);
+  background-image: linear-gradient(to right, #250ebd, #060e7a);
   height: 4vh;
   color: #ffffff;
   font-size: 1.5rem;
@@ -132,6 +135,7 @@ export const LoginInner = styled(Box)`
 export const LoginInput = styled(Box)`
   width: 100%;
   margin-top: 2rem;
+  font-size: 16px;
 `;
 
 export const LoginBottom = styled(Box)`

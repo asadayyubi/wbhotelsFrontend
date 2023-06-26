@@ -10,9 +10,12 @@ import { useSelector } from "react-redux";
 import logoImg from "../../media/images/logo.png";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "../../Contexts/LoginContext";
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import "./navbar.css";
 
 const Navbar = () => {
-  const { isLoggedIn, userProfileDetails } = useContext(LoginContext);
+  const { isLoggedIn, userProfileDetails, logout } = useContext(LoginContext);
+  const [displayToggle, setToggleDisplay] = useState(false);
   const navigate = useNavigate();
   const [filteredCity, setFilteredCity] = useState([]);
   const { cityMenu } = useSelector((state) => state.hotels);
@@ -21,14 +24,17 @@ const Navbar = () => {
     navigate("/citylist");
   }
   function openDialer() {
-    const phoneNumber = '08048036907';
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    const phoneNumber = "08048036907";
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
       window.location.href = `tel:${phoneNumber}`;
     } else {
       alert(`Please dial ${phoneNumber} on your phone.`);
     }
   }
-  
 
   // author:asad:02/06/2023 start
 
@@ -99,28 +105,56 @@ const Navbar = () => {
             <div className="details">
               <h3>080480 36907</h3>
               <p>
-              <a href="#" onClick={openDialer}>
-                Call us to book now
-              </a>
+                <a href="#" onClick={openDialer}>
+                  Call us to book now
+                </a>
               </p>
             </div>
           </div>
           <div
             className="card"
-            onClick={() =>
-              isLoggedIn ? navigate("/profilepage") : navigate("/login")
-            }
+            onClick={() => (isLoggedIn ? "" : navigate("/login"))}
           >
             <div className="icon">
               <AccountCircleOutlinedIcon />
             </div>
             {isLoggedIn ? (
-              <div className="details">
-                <h3>
-                  {userProfileDetails?.first_name ||
-                    userProfileDetails?.phone_number}
-                </h3>
-              </div>
+              <>
+                <div className="details">
+                  <h3>
+                    {userProfileDetails?.first_name ||
+                      userProfileDetails?.phone_number}
+                  </h3>
+                  <div>
+                    <ul className={`dropdown-details-user`}>
+                      <li
+                        className="my-booking"
+                        onClick={() =>
+                          isLoggedIn ? navigate("/profilepage") : ""
+                        }
+                      >
+                        My Booking
+                      </li>
+                      <li>My Profile</li>
+                      <li><CallOutlinedIcon /> 080480 36907</li>
+                      <li onClick={()=> navigate("/support")}>Support</li>
+                      <li onClick={()=> navigate("/about-us")}>About Us</li>
+                      <li
+                        onClick={() => {
+                          logout();
+                          navigate("/");
+                        }}
+                      >
+                        Logout
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                {/* <div className="dropdown-details-user"> 
+                    
+                      <p>hhhhhhhh</p>
+              </div> */}
+              </>
             ) : (
               <div className="details">
                 <h3>Login / Signup</h3>
@@ -163,8 +197,6 @@ const Navbar = () => {
                   </div> */}
                 </div>
               </div>
-
-              
             );
           }
         })}
@@ -173,7 +205,7 @@ const Navbar = () => {
           style={{ display: "flex" }}
           onClick={() => onSeeAllClick()}
         >
-        <span style={{ fontSize: "14px" }}>All Cities</span>
+          <span style={{ fontSize: "14px" }}>All Cities</span>
         </div>
       </div>
     </div>

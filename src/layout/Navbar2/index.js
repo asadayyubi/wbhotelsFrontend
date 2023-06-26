@@ -4,26 +4,31 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { useLocation, useNavigate } from "react-router-dom";
 import logoImg from "../../media/images/logo.png";
 import { LoginContext } from "../../Contexts/LoginContext";
-import useWindowDimensions from '../../windowDimensionHook'
+import useWindowDimensions from "../../windowDimensionHook";
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import "../Navbar/navbar.css";
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
-    height
+    height,
   };
 }
 const Navbar2 = () => {
-  const { isLoggedIn, userProfileDetails, searchParams } = useContext(LoginContext);
+  const { isLoggedIn, userProfileDetails, searchParams, logout } =
+    useContext(LoginContext);
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const [navbarActive, setnavbarActive] = useState(false);
   const [navbarWidthTab, setnavbarWidthTab] = useState(false);
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
   useEffect(() => {
     const handleScroll = (event) => {
       if (window.scrollY > 360) {
         setnavbarActive(true);
-      }else {
+      } else {
         setnavbarActive(false);
       }
     };
@@ -34,7 +39,7 @@ const Navbar2 = () => {
     };
   }, []);
   useEffect(() => {
-    if(windowDimensions.width <= 900) {
+    if (windowDimensions.width <= 900) {
       setnavbarWidthTab(false);
     } else {
       setnavbarWidthTab(true);
@@ -47,32 +52,70 @@ const Navbar2 = () => {
   }, [windowDimensions.width]);
 
   return (
-    <div className={`navbar-2 ${navbarActive || pathname !== "/" ? "navbar-active" : ""} ${navbarWidthTab || pathname !== "/" ? "navbar-active-desktop" : "navbar-active-tab"}`}>
+    <div
+      className={`navbar-2 ${
+        navbarActive || pathname !== "/" ? "navbar-active" : ""
+      } ${
+        navbarWidthTab || pathname !== "/"
+          ? "navbar-active-desktop"
+          : "navbar-active-tab"
+      }`}
+    >
       <div className="logo" onClick={() => navigate("/")}>
         <img src={logoImg} alt="logo" />
       </div>
       <SearchHotels />
-      <div className="card" onClick={() => {isLoggedIn? navigate("/profilepage") : navigate('/login') }} style={{marginLeft: "auto"}}>
+      <div className="card" style={{ marginLeft: "auto" }}>
         <div className="icon">
           <AccountCircleOutlinedIcon />
         </div>
-        {
-          isLoggedIn ?
+        {isLoggedIn ? (
+          <>
             <div className="details1">
-              <h3>{userProfileDetails?.username || userProfileDetails?.phone_number}</h3>
-            </div> :
-            <div className="details">
-              <h3>Login / Signup</h3>
+              <h3>
+                {userProfileDetails?.username ||
+                  userProfileDetails?.phone_number}
+              </h3>
             </div>
-        }
-
-        
+            <div>
+              <ul className={`dropdown-details-user`}style={{top:"100%"}}>
+                <li
+                  className="my-booking"
+                  onClick={() => (isLoggedIn ? navigate("/profilepage") : "")}
+                >
+                  My Booking
+                </li>
+                <li>My Profile</li>
+                <li>
+                  <CallOutlinedIcon /> 080480 36907
+                </li>
+                <li
+                  onClick={() => {
+                    console.log("clicked");
+                    navigate("/support");
+                  }}
+                >
+                  Support
+                </li>
+                <li onClick={() => navigate("/about-us")}>About Us</li>
+                <li
+                  onClick={() => {
+                    logout();
+                    navigate("/");
+                  }}
+                >
+                  Logout
+                </li>
+              </ul>
+            </div>
+          </>
+        ) : (
+          <div className="details" onClick={()=> navigate("/login")}>
+            <h3>Login / Signup</h3>
+          </div>
+        )}
       </div>
-
-      
     </div>
-
-    
   );
 };
 

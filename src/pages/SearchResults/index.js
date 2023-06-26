@@ -252,7 +252,7 @@ const SearchResults = () => {
                 <h3>
                   Earn <span>₹500</span>
                 </h3>
-                <p>Create an account to get ₹500 as LOGO Money</p>
+                <p>Create an account to get ₹500 as Login Money</p>
               </div>
             </div>
             {filterResult ? (
@@ -310,7 +310,7 @@ const SearchResults = () => {
                 <h3>
                   Earn <span>₹500</span>
                 </h3>
-                <p>Create an account to get ₹500 as LOGO Money</p>
+                <p>Create an account to get ₹500 as Login Money</p>
               </div>
             </div>
             {filterResult ? (
