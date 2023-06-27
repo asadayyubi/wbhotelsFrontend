@@ -27,7 +27,7 @@ const TermsAndConditions = () => {
               style={{width:"90%", marginTop:"80px"}}
             /> 
         </div> 
-        <div className='content'
+        <div className='content-tc'
         style={{marginTop:"5px"}}>
             {/* <p style={{fontWeight: "bold", fontSize: "2.5rem", textAlign: "center", marginTop: "1rem", fontFamily:"sans-serif"}}>About Us</p> */}
             <p style={{marginTop: "1.8rem", fontSize: "1.8rem", lineHeight: "1.4", fontFamily:"sans-serif", textAlign:"justify", marginBottom: "2rem", width:"75%", marginLeft:"180px"}}>

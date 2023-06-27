@@ -26,7 +26,8 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
 import './dabba.css'
-
+import WifiTwoToneIcon from '@mui/icons-material/WifiTwoTone';
+import airCondition from "../../media/images/air-conditioner.png"
 const handleWhatsAppShare = () => {
   const currentUrl = encodeURIComponent(window.location.href);
   const message = `Check out this page: ${currentUrl}`;
@@ -210,17 +211,18 @@ const [showdabba, setShowdabba] = useState(false);
                       <div className="grid">
                         <div className="amenity">
                           <div className="img">
-                            <img
+                            {/* <img
                               src="https://cdn-icons-png.flaticon.com/512/5569/5569304.png"
                               alt="amenities"
-                            />
+                            /> */}
+                            <WifiTwoToneIcon style={{color:"blue", fontSize:"20px", marginTop:"5px", marginLeft:"3px"}} />
                           </div>
                           <p>{"AC"}</p>
                         </div>
                         <div className="amenity">
                           <div className="img">
                             <img
-                              src="https://cdn-icons-png.flaticon.com/512/5569/5569304.png"
+                              src={airCondition}
                               alt="amenities"
                             />
                           </div>
@@ -365,7 +367,7 @@ const [showdabba, setShowdabba] = useState(false);
                     <div className="amenity">
                       <div className="img">
                         <img
-                          src="https://cdn-icons-png.flaticon.com/512/5569/5569304.png"
+                          src={amenity.file}
                           alt="amenities"
                         />
                       </div>

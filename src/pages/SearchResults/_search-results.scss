@@ -29,7 +29,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 3rem;
+      padding: 1rem;
       border-bottom: 1px solid rgba($color-grey-3, 0.5);
 
       .btn {
@@ -46,7 +46,7 @@
     }
 
     .price {
-      padding: 3rem;
+      padding: 2rem;
       border-bottom: 1px solid rgba($color-grey-3, 0.5);
       h3 {
         margin-bottom: 1rem;
@@ -60,7 +60,7 @@
     }
 
     .filters {
-      padding: 3rem;
+      padding: 2rem;
       border-bottom: 1px solid rgba($color-grey-3, 0.5);
       h3 {
         margin-bottom: 1rem;
