@@ -87,7 +87,7 @@ const Navbar2 = () => {
                 </li>
                 {/* <li>My Profile</li> */}
                 <Link to="/user-profile"> <li>My Profile</li></Link>
-                
+
                 <li>
                   <CallOutlinedIcon /> 080480 36907
                 </li>

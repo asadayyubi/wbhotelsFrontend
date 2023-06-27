@@ -130,7 +130,7 @@ const Footer = () => {
           </div>
         </div> */}
           </div>
-          <div className="bottom" style={{backgroundColor:"#4e4e4e", textAlign:"center", fontWeight:"400", padding:"0 0 2rem 2rem" , color: "white" , paddingTop:"2rem"}}>
+          <div className="bottom" style={{backgroundColor:"#4e4e4e", textAlign:"center", fontWeight:"400", padding:"1rem 0 1rem 2rem" , color: "white" , paddingTop:"2rem"}}>
             <p className="copyright">
               Copyright © 2022, All Right Reserved WB Hotels & Resorts
             </p>

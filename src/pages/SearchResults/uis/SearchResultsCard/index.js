@@ -12,12 +12,27 @@ import { Rating } from "@mui/material";
 
 const SearchResultsCard = (props) => {
   const {
-    data: {hotel_star, city, state, country, hotelname, member_lable_text, discount, price, hotel_gallery, amenities, rating_json, location_info
-
+    data: {
+      hotel_star,
+      city,
+      state,
+      country,
+      hotelname,
+      member_lable_text,
+      discount,
+      price,
+      hotel_gallery,
+      amenities,
+      rating_json,
+      location_info,
     },
     onClickCard,
   } = props;
   const [mainImageIndex, setmainImageIndex] = useState(0);
+
+  const filterAmeneties = () => {
+
+  }
 
   return (
     <div className="search-results-card" onClick={onClickCard}>
@@ -32,7 +47,12 @@ const SearchResultsCard = (props) => {
           >
             <ArrowBackIosNewIcon />
           </div>
-          {hotel_gallery.map((item, i) => i === mainImageIndex && <img key={i} src={item.file} alt={item.label} />)}
+          {hotel_gallery.map(
+            (item, i) =>
+              i === mainImageIndex && (
+                <img key={i} src={item.file} alt={item.label} />
+              )
+          )}
           <div className="badge">
             <BeenhereIcon />
             <p>Badge</p>
@@ -41,7 +61,8 @@ const SearchResultsCard = (props) => {
             className="icon next"
             onClick={(e) => {
               e.stopPropagation();
-              mainImageIndex < hotel_gallery.length - 1 && setmainImageIndex(mainImageIndex + 1);
+              mainImageIndex < hotel_gallery.length - 1 &&
+                setmainImageIndex(mainImageIndex + 1);
             }}
           >
             <ArrowForwardIosIcon />
@@ -69,31 +90,52 @@ const SearchResultsCard = (props) => {
         <div className="top">
           <h1 className="name">{hotelname}</h1>
           <p className="loc">
-            {country}, {city.city_name} · <LocationOnIcon /> {`${location_info.distance} ${location_info.distance_in}`}
+            {country}, {city.city_name} · <LocationOnIcon />{" "}
+            {`${location_info.distance} ${location_info.distance_in}`}
           </p>
         </div>
         <div className="middle">
           <div className="ratings">
-          {rating_json?.rating > 0 ? (
+            {rating_json?.rating > 0 ? (
               <div className="badge">
                 {rating_json?.rating}
                 <StarIcon />
               </div>
-            ) : null} 
+            ) : null}
             {hotel_star > 1 ? (
-              <Rating name="size-large" size="large" value={hotel_star} readOnly/>
+              <Rating
+                name="size-large"
+                size="large"
+                value={hotel_star}
+                readOnly
+              />
             ) : null}
             <p className="rating-feedback">{rating_json?.rating_in_words}</p>
           </div>
           <div className="facilities">
-            {amenities.map((item) => (
-              <div key={item.id} className="tab">
-                <div className="img">
-                  <img src={item.file} alt={item.name} />
-                </div>
-                {item.name}
-              </div>
-            ))}
+            {amenities.map((item,i) => {
+              if (item?.id > 0 && i < 5)  {
+                // console.log(item, item.id, "from ameneties card");
+                return (
+                  <div key={item.id} className="tab">
+                    <div className="img">
+                      <img src={item.file} alt={item.name} />
+                    </div>
+                    {item.name}
+                  </div>
+                );
+              // }  else if (flag && item.id === 0) {
+              //   console.log(item, item.id, "else from ameneties card");
+              //   return (
+              //     <div key={item.id} className="tab">
+              //       <div className="img">
+              //         <img src={"https://cdn-icons-png.flaticon.com/512/5569/5569304.png"} alt={item.name} />
+              //       </div>
+              //       {item.name}
+              //     </div>
+              //   );
+              }
+            })}
 
             {amenities.length > 3 && (
               <div className="more">
