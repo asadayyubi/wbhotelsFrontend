@@ -198,7 +198,7 @@ const ProfilePage = () => {
                         <BookingHistory customerBookingInfo={customerBookingInfo} />
                     </div>
                 </div>
-                <div className="edit-card-container">
+                {/* <div className="edit-card-container">
                     <div className="left-card shadow edit">
                         <h1> Edit Profile <span onClick={() => onEdit()}><ModeEditOutlineOutlinedIcon /></span></h1>
                         <form className="form-edit">
@@ -225,7 +225,7 @@ const ProfilePage = () => {
                             </div>
                         </form>
 
-                    </div>
+                    </div> */}
                     {/* <div className="right-card shadow edit">
                         <h1> Change Password  <span onClick={() => onEditPassword()}><ModeEditOutlineOutlinedIcon /></span> </h1>
                         <div>
@@ -242,7 +242,7 @@ const ProfilePage = () => {
                             </form>
                         </div>
                     </div> */}
-                </div>
+                {/* </div> */}
             </div>
         );
     }
