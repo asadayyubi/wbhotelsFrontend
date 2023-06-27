@@ -21,10 +21,6 @@ h1 {
     flex: 1 1 auto;
     padding: 150px;
 }
-p{
-    font-size: 18px;
-    line-height: 1.56;
-}
 input{
     border: hidden;
     height:3rem;
