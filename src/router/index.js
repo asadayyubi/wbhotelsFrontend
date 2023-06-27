@@ -48,6 +48,7 @@ import Cancellation from "../pages/CancellationPage/Cancellation";
 import Member from "../pages/Member/Member";
 import Support from "../pages/Support/Support";
 import Award from "../pages/Award/Award";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -143,6 +144,7 @@ const Router = () => {
           <Route exact path="/rating" element={<Rating />} />
           <Route exact path="/support" element={<Support />} />
           <Route exact path="/member" element={<Member />} />
+          <Route exact path="/user-profile" element={<UserProfile />} />
       
           <Route exact path="/award" element={<Award />}/>
           <Route

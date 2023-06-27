@@ -27,7 +27,17 @@
     font-size: 17px;
     padding: 15px;
     border-bottom: 1px solid rgb(235, 233, 233);
-  
-  
+  }
 
+
+  @media screen and (max-width: 768px) {
+  .dropdown-details-user li {
+    font-size: 12px;
+    padding: 9px;
+    border-bottom: 1px solid rgb(235, 233, 233);
+}
+
+.dropdown-details-user{
+  left: 50%;
+}
   }

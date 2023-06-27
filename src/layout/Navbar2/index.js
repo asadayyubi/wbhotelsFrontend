@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import SearchHotels from "../../components/SearchHotels";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import logoImg from "../../media/images/logo.png";
 import { LoginContext } from "../../Contexts/LoginContext";
 import useWindowDimensions from "../../windowDimensionHook";
@@ -85,7 +85,9 @@ const Navbar2 = () => {
                 >
                   My Booking
                 </li>
-                <li>My Profile</li>
+                {/* <li>My Profile</li> */}
+                <Link to="/user-profile"> <li>My Profile</li></Link>
+                
                 <li>
                   <CallOutlinedIcon /> 080480 36907
                 </li>

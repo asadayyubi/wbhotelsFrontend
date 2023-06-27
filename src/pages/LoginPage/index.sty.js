@@ -25,7 +25,7 @@ export const MainTop = styled(Box)`
   display: flex;
   color: #ffffff;
   align-items: center;
-  height: 10rem;
+  height: 2rem;
 `;
 
 export const MainBox = styled(Box)`
@@ -97,7 +97,7 @@ export const MainRight = styled(Box)`
 
 export const LoginBox = styled(Box)`
   width: 80%;
-  height: 50rem;
+  height: 45rem;
   margin: auto 13rem auto auto;
   background: #ffffff;
 
@@ -127,7 +127,7 @@ export const LoginMid = styled(Box)`
 
 export const LoginInner = styled(Box)`
   width: 90%;
-  margin: 3rem auto 2rem auto;
+  margin: 2rem auto 2rem auto;
   display: flex;
   flex-direction: column;
 `;

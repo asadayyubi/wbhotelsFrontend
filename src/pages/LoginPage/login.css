@@ -5,10 +5,9 @@
     font-family: Optima, sans-serif;
   }
 
-.main-login-trvl{
-    width: 85%;
-    margin: auto;
-    margin-top: 130px;
+.main-login-trvl {
+    margin: 45px auto auto;
+    width: 95%;
 }
 .login-sign-main-p{
     /* border-bottom: 5xp solid rgb(191, 67, 67); */
@@ -47,7 +46,7 @@
     .main-login-trvl{
         width: 65%;
         margin: auto;
-        margin-top: 60px;
+        margin-top: 15px;
     }
 }
 
@@ -55,10 +54,16 @@
     .main-login-trvl{
         width: 95%;
         margin: auto;
-        margin-top: 36px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+
+    .login-sign-p {
+        font-size: 12px;
+        margin-bottom: 2px;
     }
 
     .btn-travel-agent{
-        font-size: 14px;
+        font-size: 12px;
     }
 }
