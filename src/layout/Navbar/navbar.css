@@ -1,28 +1,44 @@
-.dropdown-details-user {
-  display: none;
-  position: absolute;
-  /* background-color: #f1f1f1; */
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  top: 11%;
-  left: 85%;
-  background: #fff;
-  list-style: none;
-}
-.card:hover .dropdown-details-user {
-  display: block;
-}
-.dropdown-details-user li:hover {
-  background: #eeeff2;
-  color: black;
-}
-.my-booking {
-  border-top: 1px solid rgb(235, 233, 233);
+
+
+.dropdown-details-user{
+    display: none;
+    position: absolute;
+    /* background-color: #f1f1f1; */
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 11%;
+    left: 85%;
+    background: #fff;
+    list-style: none;
+    
+   }
+   .card:hover .dropdown-details-user{
+    display: block;
+   }
+   .dropdown-details-user li:hover{
+    background:#eeeff2;
+    color: black;
+   }
+ .my-booking{
+    border-top: 1px solid rgb(235, 233, 233);
+ }
+
+   .dropdown-details-user li{
+    font-size: 17px;
+    padding: 15px;
+    border-bottom: 1px solid rgb(235, 233, 233);
+  }
+
+
+  @media screen and (max-width: 768px) {
+  .dropdown-details-user li {
+    font-size: 12px;
+    padding: 9px;
+    border-bottom: 1px solid rgb(235, 233, 233);
 }
 
-.dropdown-details-user li {
-  font-size: 17px;
-  padding: 15px;
-  border-bottom: 1px solid rgb(235, 233, 233);
+.dropdown-details-user{
+  left: 50%;
 }
+  }
