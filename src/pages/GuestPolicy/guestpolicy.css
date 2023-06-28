@@ -1,0 +1,70 @@
+
+.policy__termtabswrap {
+    display: flex;
+    justify-content: center;
+    margin: 5px 12%;
+}
+.policy__container {
+    margin-top: 0px;
+    text-align: justify;
+}
+
+.policy {
+    width: 80%;
+    max-width: 1180px;
+    min-width: 320px;
+    margin: 20px auto 8%;
+    border-radius: 2px;
+    box-shadow: 2px 4px 8px 0 rgba(0,0,0,.1);
+    border: 1px solid #d6d6d6;
+    box-sizing: border-box;
+    padding: 25px 6% 3%;
+}
+
+.policy__hero {
+    background-size: 60px;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.policy__hero~.policy__section {
+    border: none;
+    margin: 0;
+}
+
+.policy__subHeading {
+    color: #212b36;
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: justify;
+}
+
+.policy ol li, .policy ul li {
+    margin-bottom: 8px;
+    text-align: justify;
+    list-style: none;
+}
+
+.policy ol, .policy ul {
+    line-height: 1.25;
+}
+
+.policy__section {
+    border-bottom: 1px solid #979797;
+    margin: 30px 0;
+}
+
+.policy {
+    margin-bottom: 5px!important;
+    white-space: pre-wrap;
+    text-align: justify;
+}
+
+.policy, .policy span, .policy ul {
+    font-size: 16px;
+    line-height: 22px;
+    color: #222;
+    text-align: justify;
+}

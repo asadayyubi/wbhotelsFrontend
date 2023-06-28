@@ -137,7 +137,7 @@ const Support = () => {
                 }}
               >
                 For immediate assistance, please call our 24/7 helpline at
-                [phone number]. We are here to help.
+                080480 36907. We are here to help.
               </p>
             </div>
           </div>

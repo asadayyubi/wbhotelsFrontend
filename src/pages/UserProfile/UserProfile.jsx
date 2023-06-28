@@ -71,8 +71,8 @@ const UserProfile = () => {
 
   return (
     <>
-      <div className="edit-card-container">
-        <div className="left-card shadow edit">
+      <div className="edit-card-user-profile">
+        <div className="user-profie">
           <h1>
             {" "}
             Edit Profile{" "}
@@ -80,8 +80,8 @@ const UserProfile = () => {
               <ModeEditOutlineOutlinedIcon />
             </span>
           </h1>
-          <form className="form-edit">
-            <div>
+          <form className="user-form">
+            <div className="user-form-main-div">
               <span>Full Name</span>
               <div>
                 <input

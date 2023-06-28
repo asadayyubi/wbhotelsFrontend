@@ -494,7 +494,8 @@ const HotelPage = () => {
                     })}
                   </List>
                   <h3>
-                    <a href="#">View Guest Policy</a>
+                    <a href="/guest-policy">View Guest Policy</a>
+                    {/* <Link to= "/guest-policy">View Guest Policy</Link> */}
                   </h3>
                 </div>
               </div>
