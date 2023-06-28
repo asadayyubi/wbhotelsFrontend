@@ -22,28 +22,28 @@ import axios from "axios";
 import { API_GET_HOTELS_BY_ID } from "../../apis/index";
 import LoaderPrimary from "../../layout/Loader/LoaderPrimary";
 import { useBookingData } from "../../Contexts/BookingContext";
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import EmailIcon from '@mui/icons-material/Email';
-import './dabba.css'
-import WifiTwoToneIcon from '@mui/icons-material/WifiTwoTone';
-import airCondition from "../../media/images/air-conditioner.png"
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import EmailIcon from "@mui/icons-material/Email";
+import "./dabba.css";
+import WifiTwoToneIcon from "@mui/icons-material/WifiTwoTone";
+import airCondition from "../../media/images/air-conditioner.png";
 const handleWhatsAppShare = () => {
   const currentUrl = encodeURIComponent(window.location.href);
   const message = `Check out this page: ${currentUrl}`;
   const url = `https://api.whatsapp.com/send?text=${message}`;
-  window.open(url, '_blank');
+  window.open(url, "_blank");
 };
 
 const handleFacebookShare = () => {
   const currentUrl = encodeURIComponent(window.location.href);
   const url = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
-  window.open(url, '_blank');
+  window.open(url, "_blank");
 };
 
 const handleEmailShare = () => {
   const currentUrl = encodeURIComponent(window.location.href);
-  const subject = 'Check out this page';
+  const subject = "Check out this page";
   const body = `I thought you might be interested in this page: ${currentUrl}`;
   const url = `mailto:?subject=${subject}&body=${body}`;
   window.location.href = url;
@@ -55,7 +55,7 @@ const HotelPage = () => {
     useContext(LoginContext);
   const { setPriceAndRoomDetails } = useBookingData();
   // console.log("..location...", location?.state?.data);
-const [showdabba, setShowdabba] = useState(false);
+  const [showdabba, setShowdabba] = useState(false);
   useEffect(() => {
     setHotelDetails(undefined);
     const queryParams = new URLSearchParams(window.location.search);
@@ -215,18 +215,22 @@ const [showdabba, setShowdabba] = useState(false);
                               src="https://cdn-icons-png.flaticon.com/512/5569/5569304.png"
                               alt="amenities"
                             /> */}
-                            <WifiTwoToneIcon style={{color:"blue", fontSize:"20px", marginTop:"5px", marginLeft:"3px"}} />
-                          </div>
-                          <p>{"AC"}</p>
-                        </div>
-                        <div className="amenity">
-                          <div className="img">
-                            <img
-                              src={airCondition}
-                              alt="amenities"
+                            <WifiTwoToneIcon
+                              style={{
+                                color: "blue",
+                                fontSize: "20px",
+                                marginTop: "5px",
+                                marginLeft: "3px",
+                              }}
                             />
                           </div>
                           <p>{"WiFi"}</p>
+                        </div>
+                        <div className="amenity">
+                          <div className="img">
+                            <img src={airCondition} alt="amenities" />
+                          </div>
+                          <p>{"AC"}</p>
                         </div>
                       </div>
                     </div>
@@ -278,41 +282,79 @@ const [showdabba, setShowdabba] = useState(false);
       <div className="hotel-page">
         <CarouselPrimary carouselId="123">
           <>
-            <div className="carousel-btn share" onClick={() => setShowdabba(!showdabba)}>
+            <div
+              className="carousel-btn share"
+              onClick={() => setShowdabba(!showdabba)}
+            >
               <ShareIcon />
               <p>Share</p>
             </div>
-            <div className={`dabba ${showdabba ? "hide-dabba" : "display-dabba"}`}>
-              <div style={{display:"flex"}}>
+            <div
+              className={`dabba ${showdabba ? "hide-dabba" : "display-dabba"}`}
+            >
+              <div style={{ display: "flex" }}>
                 <p>
-                <WhatsAppIcon onClick={handleWhatsAppShare}
-                style={{fontSize:"40px", paddingTop:"8px", paddingLeft:"10px"}}
-                /> 
+                  <WhatsAppIcon
+                    onClick={handleWhatsAppShare}
+                    style={{
+                      fontSize: "40px",
+                      paddingTop: "8px",
+                      paddingLeft: "10px",
+                    }}
+                  />
                 </p>
-                <div style={{fontSize:"16px", paddingTop:"14px", paddingLeft:"10px"}}>
-                WhatsApp
+                <div
+                  style={{
+                    fontSize: "16px",
+                    paddingTop: "14px",
+                    paddingLeft: "10px",
+                  }}
+                >
+                  WhatsApp
                 </div>
-                </div>
-                <div style={{display:"flex"}}>
+              </div>
+              <div style={{ display: "flex" }}>
                 <p>
-                <FacebookIcon onClick={handleFacebookShare}
-                style={{fontSize:"40px", paddingTop:"8px", paddingLeft:"10px"}}
-                />
+                  <FacebookIcon
+                    onClick={handleFacebookShare}
+                    style={{
+                      fontSize: "40px",
+                      paddingTop: "8px",
+                      paddingLeft: "10px",
+                    }}
+                  />
                 </p>
-                <div style={{fontSize:"16px", paddingTop:"14px", paddingLeft:"10px"}}>
-                Facebook
+                <div
+                  style={{
+                    fontSize: "16px",
+                    paddingTop: "14px",
+                    paddingLeft: "10px",
+                  }}
+                >
+                  Facebook
                 </div>
-                </div>
-                <div style={{display:"flex"}}>
-                <p>  
-                <EmailIcon onClick={handleEmailShare}
-                style={{fontSize:"40px", paddingTop:"8px", paddingLeft:"10px"}}
-                />
+              </div>
+              <div style={{ display: "flex" }}>
+                <p>
+                  <EmailIcon
+                    onClick={handleEmailShare}
+                    style={{
+                      fontSize: "40px",
+                      paddingTop: "8px",
+                      paddingLeft: "10px",
+                    }}
+                  />
                 </p>
-                <div style={{fontSize:"16px", paddingTop:"14px", paddingLeft:"10px"}}>
-                E-mail
+                <div
+                  style={{
+                    fontSize: "16px",
+                    paddingTop: "14px",
+                    paddingLeft: "10px",
+                  }}
+                >
+                  E-mail
                 </div>
-                </div>
+              </div>
             </div>
             {hotel_data?.hotel_gallery.map((hotel) => {
               return (
@@ -343,13 +385,12 @@ const [showdabba, setShowdabba] = useState(false);
                 ) : null}
                 {hotel_data?.hotel_star > 1 ? (
                   <Rating
-                  name="size-large"
-                  size="large"
-                  value={hotel_data?.hotel_star}
-                  readOnly
-                />
+                    name="size-large"
+                    size="large"
+                    value={hotel_data?.hotel_star}
+                    readOnly
+                  />
                 ) : null}
-                
               </div>
             </div>
             <div className="check-in">
@@ -366,10 +407,7 @@ const [showdabba, setShowdabba] = useState(false);
                   return (
                     <div className="amenity">
                       <div className="img">
-                        <img
-                          src={amenity.file}
-                          alt="amenities"
-                        />
+                        <img src={amenity.file} alt="amenities" />
                       </div>
                       <p>{amenity.lable}</p>
                     </div>
