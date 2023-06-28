@@ -188,6 +188,7 @@ export default function BookDetails(props) {
         <div className='column-flex'>
           <div><p>Something not right?<a href="#"> Chat with us</a> for help. </p></div>
           <div><p><a href="#">Read WB's Terms and Condition</a></p></div>
+          <div><p><a href="/guest-policy">Read WB's Guest Policy</a></p></div>
         </div>
       </div>
 

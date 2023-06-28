@@ -40,7 +40,7 @@ import RefundPolicy from "../pages/CancellationPage/RefundPolicy";
 import ContactUs from "../pages/CancellationPage/ContactUs";
 import WhatsAppWidget from "react-whatsapp-chat-widget";
 import "react-whatsapp-chat-widget/index.css";
-import companyLogo from "../media/images/logowithtext.png"
+import companyLogo from "../media/images/logowithtext.png";
 import { Propertylisting } from "../pages/PropertyListing/Propertylisting";
 import Businesswb from "../pages/Wbbusiness/Businesswb";
 import InvestorRelation from "../pages/InvesterRelation/InvestorRelation";
@@ -49,6 +49,7 @@ import Member from "../pages/Member/Member";
 import Support from "../pages/Support/Support";
 import Award from "../pages/Award/Award";
 import UserProfile from "../pages/UserProfile/UserProfile";
+import GuestPolicy from "../pages/GuestPolicy/GuestPolicy";
 
 const Router = () => {
   const dispatch = useDispatch();
@@ -145,20 +146,21 @@ const Router = () => {
           <Route exact path="/support" element={<Support />} />
           <Route exact path="/member" element={<Member />} />
           <Route exact path="/user-profile" element={<UserProfile />} />
-      
-          <Route exact path="/award" element={<Award />}/>
+
+          <Route exact path="/award" element={<Award />} />
+          <Route exact path="/guest-policy" element={<GuestPolicy />} />
           <Route
             exact
             path="/terms-and-conditions"
             element={<TermsAndConditions />}
           />
-           <Route
+          <Route exact path="/careers" element={<Careers />} />
+          <Route
             exact
-            path="/careers"
-            element={<Careers />}
+            path="/investor-relation"
+            element={<InvestorRelation />}
           />
-           <Route exact path="/investor-relation" element={<InvestorRelation/>} />
-          <Route exact path="/cancellation" element={<Cancellation/>} />
+          <Route exact path="/cancellation" element={<Cancellation />} />
           <Route exact path="/contact-us" element={<ContactUs />} />
           <Route exact path="/manage-booking" element={<RefundPolicy />} />
           <Route

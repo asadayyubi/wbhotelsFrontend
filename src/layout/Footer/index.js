@@ -54,6 +54,7 @@ const Footer = () => {
               <a href="/investor-relation">Investor Relations</a>
               <a href="/cancellation">Cancellation Policy</a>
               <Link to="/policy">Privacy policy</Link>
+              <a href="/guest-policy">Guest Policy</a>
              
             </div>
             <div className="col">
@@ -63,6 +64,7 @@ const Footer = () => {
               <a href="/contact-us">Contact Us</a>
               <a href="/terms-and-conditions">Terms and conditions</a>
               <a href="/award">Award</a>
+              <a href="">Blog</a>
 
               
             </div>
